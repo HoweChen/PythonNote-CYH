@@ -70,3 +70,14 @@ print('Max of square')
 print(max(square))
 print('Sum of square')
 print(sum(square))
+players = ['charles', 'martina', 'michael', 'florence', 'eli']
+print(players[1:4])  # ['martina', 'michael', 'florence']
+print(players[:4])  # ['charles', 'martina', 'michael', 'florence']
+print(players[2:])  # ['michael', 'florence', 'eli']
+print(players[-3:])  # ['michael', 'florence', 'eli']
+print(players[::-1])  # ['eli', 'florence', 'michael', 'martina', 'charles']
+players.reverse()
+print(players)  # ['eli', 'florence', 'michael', 'martina', 'charles']
+for itr in reversed(players):
+    print(itr)
+
