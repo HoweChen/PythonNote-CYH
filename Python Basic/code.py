@@ -163,3 +163,31 @@ pizza = {
 print(pizza['crust'])
 for topping in pizza['toppings']:
     print(topping)
+
+favorite_languages = {'jen': ['python', 'ruby'],
+                      'sarah': ['c'],
+                      'edward': ['ruby', 'go'],
+                      'phil': ['python', 'haskell'], }
+for key, languages in favorite_languages.items():
+    print(key + ': ', end=' ')  # print() without end with newline
+    for language in languages:
+        print(language, end=' ')
+    print()
+
+# nested dictionary
+users = {
+    'aeinstein': {
+        'first': 'albert',
+        'last': 'einstein',
+        'location': 'princeton',
+    },
+    'mcurie': {
+        'first': 'marie',
+        'last': 'curie',
+        'location': 'paris',
+    },
+}
+for user_name, user_info in users.items():
+    print(user_name)
+    for key, value in user_info.items():
+        print('\t' + key + ': ' + value)
