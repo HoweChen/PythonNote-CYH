@@ -112,3 +112,54 @@ print(alien_0)
 alien_0['x'] = 0
 alien_0['y'] = 5
 print(alien_0)
+del(alien_0['points'])
+print(alien_0)
+favourite_language = {
+    'jen': 'python',
+    'sarah': 'c',
+    'edward': 'python',
+    'phil': 'ruby'
+}
+print('Sarah\'s favourite language is ' +
+      favourite_language['sarah'].title() + '.\n')
+for i, j in favourite_language.items():
+    # one way to tranverse a dictionary
+    print("\nName: " + i)
+    print("\nValue: " + j)
+print('\n----------Another way----------')
+for key in favourite_language:
+    # another way
+    print('\nName: ' + key)
+    print('\nValue: ' + favourite_language[key])
+for key in favourite_language.keys():
+     # print only keys
+    print(key + '\n')
+for key in sorted(favourite_language):
+    # temporary sorted dictionary
+    print('\nName: ' + key)
+    print('\nValue: ' + favourite_language[key] + '\n')
+for value in favourite_language.values():
+    # print all value but with duplication
+    print(value)
+print('Without duplication')
+for value in set(favourite_language.values()):
+    # without duplication
+    # change the values into a set which would not allow the duplication
+    print(value)
+
+# nested data structure
+alien = []
+
+for number in range(30):
+    new_alien = {'color': 'green', 'points': 5, 'speed': 'slow'}
+    alien.append(new_alien)
+print(alien)
+
+# list in dictionary
+pizza = {
+    'crust': 'thick',
+    'toppings': ['mushroom', 'pineapple']
+}
+print(pizza['crust'])
+for topping in pizza['toppings']:
+    print(topping)
