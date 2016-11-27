@@ -132,7 +132,7 @@ for key in favourite_language:
     print('\nName: ' + key)
     print('\nValue: ' + favourite_language[key])
 for key in favourite_language.keys():
-     # print only keys
+    # print only keys
     print(key + '\n')
 for key in sorted(favourite_language):
     # temporary sorted dictionary
