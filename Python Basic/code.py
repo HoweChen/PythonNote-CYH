@@ -191,3 +191,25 @@ for user_name, user_info in users.items():
     print(user_name)
     for key, value in user_info.items():
         print('\t' + key + ': ' + value)
+
+# user input
+# message = input("Tell me something, and I will repeat it back to you: ")
+# print(message)
+
+# function
+
+
+def greet_user(username):
+    """显示简单的问候语"""
+    print("Hello, " + username.title() + "!")
+greet_user('jesse')
+
+
+def describe_pet(animal_type, pet_name):
+    """显示宠物的信息"""
+    print("\nI have a " + animal_type + ".")
+    print("My " + animal_type + "'s name is " + pet_name.title() + ".")
+
+describe_pet(animal_type='hamster', pet_name='harry') #keyword parameter
+
+
