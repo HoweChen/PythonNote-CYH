@@ -81,3 +81,34 @@ print(players)  # ['eli', 'florence', 'michael', 'martina', 'charles']
 for itr in reversed(players):
     print(itr)
 
+# copy a list
+another_player = players
+another_player.append('howe')
+print(players)  # ['eli', 'florence', 'michael', 'martina', 'charles', 'howe']
+# still have howe insdie because this copy is a shallow copy
+# deep copy
+another_player = players[:]
+another_player.append('howe')
+players.append('chen')
+print(another_player)
+# ['eli', 'florence', 'michael', 'martina', 'charles', 'howe', 'howe']
+print(players)
+# ['eli', 'florence', 'michael', 'martina', 'charles', 'howe', 'chen']
+
+# logic
+banned_users = ['andrew', 'carolina', 'david']
+user = 'marie'
+if user not in banned_users:
+    print(user.title() + "not in banned_users")
+test_list = []
+if test_list:
+    print('not empty')
+else:
+    print('empty')
+
+# dictionary
+alien_0 = {'color': 'green', 'points': 5}
+print(alien_0)
+alien_0['x'] = 0
+alien_0['y'] = 5
+print(alien_0)
