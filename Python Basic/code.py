@@ -243,6 +243,11 @@ user_profile = build_profile(
 
 print(user_profile)
 
+# import function and from module import function
 import pizza
+pizza.make_pizza(13, 'pepperoni')
+pizza.make_pizza(15, 'mushrooms', 'green peppers', 'extra cheese')
+
+from pizza import make_pizza
 pizza.make_pizza(13, 'pepperoni')
 pizza.make_pizza(15, 'mushrooms', 'green peppers', 'extra cheese')
