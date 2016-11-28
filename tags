@@ -1,0 +1,38 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+alien	Python Basic/code.py	/^alien = []$/;"	kind:variable	line:151
+alien_0	Python Basic/code.py	/^alien_0 = {'color': 'green', 'points': 5}$/;"	kind:variable	line:110
+another_player	Python Basic/code.py	/^another_player = players$/;"	kind:variable	line:85
+another_player	Python Basic/code.py	/^another_player = players[:]$/;"	kind:variable	line:90
+banned_users	Python Basic/code.py	/^banned_users = ['andrew', 'carolina', 'david']$/;"	kind:variable	line:99
+cars	Python Basic/code.py	/^cars = ['audi', 'subaru', 'bmw', 'toyata']$/;"	kind:variable	line:28
+cars	Python Basic/code.py	/^cars = ['bmw', 'audi', 'toyota', 'subaru']$/;"	kind:variable	line:40
+code.py	Python Basic/code.py	1;"	kind:file	line:1
+cv2	py2 cv2/cv2.py	/^import cv2$/;"	kind:namespace	line:1
+cv2.py	py2 cv2/cv2.py	1;"	kind:file	line:1
+describe_pet	Python Basic/code.py	/^def describe_pet(animal_type, pet_name):$/;"	kind:function	line:209
+even_numbers	Python Basic/code.py	/^even_numbers = list(range(2, 11, 2))$/;"	kind:variable	line:57
+favorite_languages	Python Basic/code.py	/^favorite_languages = {'jen': ['python', 'ruby'],$/;"	kind:variable	line:167
+favourite_language	Python Basic/code.py	/^favourite_language = "  Pythonhaha"$/;"	kind:variable	line:11
+favourite_language	Python Basic/code.py	/^favourite_language = "Pythonhaha  "$/;"	kind:variable	line:7
+favourite_language	Python Basic/code.py	/^favourite_language = {$/;"	kind:variable	line:117
+greet_user	Python Basic/code.py	/^def greet_user(username):$/;"	kind:function	line:203
+img	py2 cv2/cv2.py	/^img = cv2.imread('\/Users\/howechen\/GitHub\/PythonNote-CYH\/pyTest\/Lenna.png')$/;"	kind:variable	line:4
+k	py2 cv2/cv2.py	/^k = cv2.waitKey(0)$/;"	kind:variable	line:7
+magicians	Python Basic/code.py	/^magicians = ['alice', 'david', 'carolina']$/;"	kind:variable	line:47
+motorcycles	Python Basic/code.py	/^motorcycles = ['honda', 'yamaha', 'suzuki']$/;"	kind:variable	line:15
+name	Python Basic/code.py	/^name = "ada lovelace"$/;"	kind:variable	line:2
+new_alien	Python Basic/code.py	/^    new_alien = {'color': 'green', 'points': 5, 'speed': 'slow'}$/;"	kind:variable	line:154
+np	py2 cv2/cv2.py	/^import numpy as np$/;"	kind:namespace	line:2
+numbers	Python Basic/code.py	/^numbers = list(range(1, 6))$/;"	kind:variable	line:55
+pizza	Python Basic/code.py	/^pizza = {$/;"	kind:variable	line:159
+players	Python Basic/code.py	/^players = ['charles', 'martina', 'michael', 'florence', 'eli']$/;"	kind:variable	line:73
+popped_element	Python Basic/code.py	/^popped_element = motorcycles.pop()$/;"	kind:variable	line:25
+square	Python Basic/code.py	/^square = list()$/;"	kind:variable	line:60
+test_list	Python Basic/code.py	/^test_list = []$/;"	kind:variable	line:103
+user	Python Basic/code.py	/^user = 'marie'$/;"	kind:variable	line:100
+users	Python Basic/code.py	/^users = {$/;"	kind:variable	line:178
