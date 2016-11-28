@@ -213,18 +213,32 @@ def describe_pet(animal_type, pet_name):
 
 describe_pet(animal_type='hamster', pet_name='harry')  # keyword parameter
 
-
-def print_models(unprinted_designs, completed_models):
-    """ 模拟打印每个设计ǈ直到ு有未打印的设计为止 打印每个设计后ǈ都将其移到列表completed_models中 """
-    while unprinted_designs:
-        current_design = unprinted_designs.pop()
-        # 模拟根据设计制作3D打印模型的过程
-        print("Printing model: " + current_design)
-        completed_models.append(current_design)
+# any size of parameter
 
 
-def show_completed_models(completed_models):
-    """显示打印好的所有模型"""
-    print("\nThe following models have been printed:")
-    for completed_model in completed_models:
-        print(completed_model)
+def make_pizza(size, *toppings):
+    # parameter which accept any numbers of parameters should set at the last
+    # of parameter list
+    print('Make pizza with the size ' + str(size) +
+          ' and the following toppings: \n')
+    for topping in toppings:
+        print('- ' + topping + '\n')
+
+make_pizza(13, 'pepperoni')
+make_pizza(15, 'mushrooms', 'green peppers', 'extra cheese')
+
+
+def build_profile(first, last, **user_info):
+    # in this case user_info is a empty dictionary
+    profile = {}
+    profile['first_name'] = first
+    profile['last_name'] = last
+    for key, value in user_info.items():
+        profile[key] = value
+    return profile
+
+# send two key-value pairs
+user_profile = build_profile(
+    'albert', 'einstein', location='princeton', field='physics')
+
+print(user_profile)
