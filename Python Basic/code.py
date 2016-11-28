@@ -251,3 +251,11 @@ pizza.make_pizza(15, 'mushrooms', 'green peppers', 'extra cheese')
 from pizza import make_pizza
 pizza.make_pizza(13, 'pepperoni')
 pizza.make_pizza(15, 'mushrooms', 'green peppers', 'extra cheese')
+
+
+# change the value of a and b
+a = 1
+b = 2
+a, b = b, a
+print(a)
+print(b)
