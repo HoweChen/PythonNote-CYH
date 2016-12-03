@@ -120,6 +120,7 @@ favourite_language = {
     'edward': 'python',
     'phil': 'ruby'
 }
+# dictionary is sorted by key automatically
 print('Sarah\'s favourite language is ' +
       favourite_language['sarah'].title() + '.\n')
 for i, j in favourite_language.items():
@@ -270,4 +271,3 @@ for teama, teamb in zip(nfc, afc):
 # list to a string
 teams = ["Packers", "49ers", "Ravens", "Patriots"]
 print(", ".join(teams))
-

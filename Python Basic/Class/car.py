@@ -1,22 +1,3 @@
-class Dog():
-
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-
-    def sit(self):
-        print(self.name.title() + "is sitting")
-
-    def roll_over(self):
-        print(self.name.title() + "is rolling over")
-
-my_dog = Dog("Willie", 6)
-print(my_dog.name)
-print(my_dog.age)
-my_dog.sit()
-my_dog.roll_over()
-
-
 class Car():
 
     def __init__(self, make, model, year):
@@ -30,7 +11,7 @@ class Car():
         return long_name.title()
 
     def read_odometer(self):
-        print('The car has' + str(self.odometer_reading) + ' miles on it')
+        print('The car has ' + str(self.odometer_reading) + ' miles on it')
 
     def update_odometer(self, milege):
         if milege >= self.odometer_reading:
@@ -42,17 +23,6 @@ class Car():
         self.odometer_reading += miles
 
 
-class ElectricCar(Car):
-
-    def __init__(self, make, model, year):
-        super().__init__(make, model, year)
-        # self.battery_size = 70
-        self.battery = Battery()
-
-    # def describe_battery(self):
-    #     print("This car has a " + str(self.battery_size) + "-kWh battery.")
-
-
 class Battery():
 
     def __init__(self, battery_size=70):
@@ -61,7 +31,17 @@ class Battery():
     def describe_battery(self):
         print("This car has a " + str(self.battery_size) + "-kWh battery.")
 
-my_tesla = ElectricCar('tesla', 'model s', 2016)
-my_tesla.read_odometer()
+    def get_range(self):
+        if self.battery_size == 70:
+            self.range = 240
+        elif self.battery_size == 85:
+            self.range = 70
+        message = "This car can go approximately " + str(self.range)
+        message += " miles on a full charge."
+        print(message)
+
+# my_tesla = ElectricCar('tesla', 'electric_car', 2016)
+# my_tesla.read_odometer()
 # my_tesla.describe_battery()
-my_tesla.battery.describe_battery()
+# my_tesla.battery.describe_battery()
+# my_tesla.battery.get_range()
