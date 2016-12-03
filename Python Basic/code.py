@@ -270,3 +270,4 @@ for teama, teamb in zip(nfc, afc):
 # list to a string
 teams = ["Packers", "49ers", "Ravens", "Patriots"]
 print(", ".join(teams))
+
