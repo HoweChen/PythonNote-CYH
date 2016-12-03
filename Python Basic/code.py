@@ -259,3 +259,14 @@ b = 2
 a, b = b, a
 print(a)
 print(b)
+
+
+# zip
+nfc = ["Packers", "49ers"]
+afc = ["Ravens", "Patriots"]
+for teama, teamb in zip(nfc, afc):
+    print(teama + " vs. " + teamb)
+
+# list to a string
+teams = ["Packers", "49ers", "Ravens", "Patriots"]
+print(", ".join(teams))
