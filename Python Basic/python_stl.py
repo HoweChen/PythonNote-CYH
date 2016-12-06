@@ -9,3 +9,6 @@ favourite_languages['phil'] = 'ruby'
 
 for key, value in favourite_languages.items():
     print(key + ',' + value)
+
+result = (i for i in range(1, 20))
+print(result)
