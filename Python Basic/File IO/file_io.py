@@ -9,6 +9,7 @@ with open('/users/howechen/GitHub/PythonNote-CYH/Python Basic/File IO/test.txt')
 
     lines = file_object.readlines()
 
+# print(lines)
 for line in lines:
     print(line.rstrip())
 
