@@ -1,0 +1,125 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AnonymousSurvey	Python Basic/PYTest/Survey/language_survey.py	/^from survey import AnonymousSurvey$/;"	kind:namespace	line:1
+AnonymousSurvey	Python Basic/PYTest/Survey/survey.py	/^class AnonymousSurvey():$/;"	kind:class	line:1
+AnonymousSurvey	Python Basic/PYTest/Survey/test_survey.py	/^from survey import AnonymousSurvey$/;"	kind:namespace	line:2
+Battery	Python Basic/Class/car.py	/^class Battery():$/;"	kind:class	line:26
+Car	Python Basic/Class/car.py	/^class Car():$/;"	kind:class	line:1
+Dog	Python Basic/Class/class.py	/^class Dog():$/;"	kind:class	line:1
+ElectricCar	Python Basic/Class/electric_car.py	/^class ElectricCar(car.Car):$/;"	kind:class	line:4
+NameTestCase	Python Basic/PYTest/Name/test_name_function.py	/^class NameTestCase(unittest.TestCase):$/;"	kind:class	line:5
+OrderedDict	Python Basic/python_stl.py	/^from collections import OrderedDict$/;"	kind:namespace	line:1
+TestAnonymousSurvey	Python Basic/PYTest/Survey/test_survey.py	/^class TestAnonymousSurvey(unittest.TestCase):$/;"	kind:class	line:5
+__init__	Python Basic/Class/car.py	/^    def __init__(self, battery_size=70):$/;"	kind:member	line:28
+__init__	Python Basic/Class/car.py	/^    def __init__(self, make, model, year):$/;"	kind:member	line:3
+__init__	Python Basic/Class/class.py	/^    def __init__(self, name, age):$/;"	kind:member	line:3
+__init__	Python Basic/Class/electric_car.py	/^    def __init__(self, make, model, year):$/;"	kind:member	line:6
+__init__	Python Basic/PYTest/Survey/survey.py	/^    def __init__(self, question):$/;"	kind:member	line:3
+a	Python Basic/code.py	/^a = 1$/;"	kind:variable	line:258
+afc	Python Basic/code.py	/^afc = ["Ravens", "Patriots"]$/;"	kind:variable	line:267
+alien	Python Basic/code.py	/^alien = []$/;"	kind:variable	line:152
+alien_0	Python Basic/code.py	/^alien_0 = {'color': 'green', 'points': 5}$/;"	kind:variable	line:110
+another_player	Python Basic/code.py	/^another_player = players$/;"	kind:variable	line:85
+another_player	Python Basic/code.py	/^another_player = players[:]$/;"	kind:variable	line:90
+answer	Python Basic/PYTest/Survey/language_survey.py	/^    answer = input('Input your answer: \\n')$/;"	kind:variable	line:8
+b	Python Basic/code.py	/^b = 2$/;"	kind:variable	line:259
+banned_users	Python Basic/code.py	/^banned_users = ['andrew', 'carolina', 'david']$/;"	kind:variable	line:99
+build_profile	Python Basic/code.py	/^def build_profile(first, last, **user_info):$/;"	kind:function	line:232
+car	Python Basic/Class/electric_car.py	/^import car$/;"	kind:namespace	line:1
+car	Python Basic/Class/my_car.py	/^import car$/;"	kind:namespace	line:3
+car.py	Python Basic/Class/car.py	1;"	kind:file	line:1
+cars	Python Basic/code.py	/^cars = ['audi', 'subaru', 'bmw', 'toyata']$/;"	kind:variable	line:28
+cars	Python Basic/code.py	/^cars = ['bmw', 'audi', 'toyota', 'subaru']$/;"	kind:variable	line:40
+class.py	Python Basic/Class/class.py	1;"	kind:file	line:1
+code.py	Python Basic/code.py	1;"	kind:file	line:1
+cv2	py2 cv2/cv2.py	/^import cv2$/;"	kind:namespace	line:1
+cv2.py	py2 cv2/cv2.py	1;"	kind:file	line:1
+describe_battery	Python Basic/Class/car.py	/^    def describe_battery(self):$/;"	kind:member	line:31
+describe_pet	Python Basic/code.py	/^def describe_pet(animal_type, pet_name):$/;"	kind:function	line:210
+electric_car	Python Basic/Class/my_car.py	/^import electric_car$/;"	kind:namespace	line:4
+electric_car.py	Python Basic/Class/electric_car.py	1;"	kind:file	line:1
+error_code.py	Python Basic/Error/error_code.py	1;"	kind:file	line:1
+even_numbers	Python Basic/code.py	/^even_numbers = list(range(2, 11, 2))$/;"	kind:variable	line:57
+favorite_languages	Python Basic/code.py	/^favorite_languages = {'jen': ['python', 'ruby'],$/;"	kind:variable	line:168
+favourite_language	Python Basic/code.py	/^favourite_language = "  Pythonhaha"$/;"	kind:variable	line:11
+favourite_language	Python Basic/code.py	/^favourite_language = "Pythonhaha  "$/;"	kind:variable	line:7
+favourite_language	Python Basic/code.py	/^favourite_language = {$/;"	kind:variable	line:117
+favourite_languages	Python Basic/python_stl.py	/^favourite_languages = OrderedDict()$/;"	kind:variable	line:3
+fileName	Python Basic/JSON/json_test.py	/^fileName = '\/users\/howechen\/GitHub\/PythonNote-CYH\/Python Basic\/JSON\/numbers.json'$/;"	kind:variable	line:4
+file_io.py	Python Basic/File IO/file_io.py	1;"	kind:file	line:1
+first	Python Basic/PYTest/Name/names.py	/^    first = input("\\nPlease give me a first name: ")$/;"	kind:variable	line:5
+formatted_name	Python Basic/PYTest/Name/names.py	/^    formatted_name = get_formatted_name(first, last)$/;"	kind:variable	line:11
+get_descriptive_name	Python Basic/Class/car.py	/^    def get_descriptive_name(self):$/;"	kind:member	line:9
+get_formatted_name	Python Basic/PYTest/Name/name_function.py	/^def get_formatted_name(first, last, middle=''):$/;"	kind:function	line:1
+get_formatted_name	Python Basic/PYTest/Name/names.py	/^from name_function import get_formatted_name$/;"	kind:namespace	line:1
+get_formatted_name	Python Basic/PYTest/Name/test_name_function.py	/^from name_function import get_formatted_name$/;"	kind:namespace	line:2
+get_range	Python Basic/Class/car.py	/^    def get_range(self):$/;"	kind:member	line:34
+greet_user	Python Basic/code.py	/^def greet_user(username):$/;"	kind:function	line:204
+img	py2 cv2/cv2.py	/^img = cv2.imread('\/Users\/howechen\/GitHub\/PythonNote-CYH\/pyTest\/Lenna.png')$/;"	kind:variable	line:4
+increment_odometer	Python Basic/Class/car.py	/^    def increment_odometer(self, miles):$/;"	kind:member	line:22
+json	Python Basic/JSON/json_test.py	/^import json$/;"	kind:namespace	line:1
+json_test.py	Python Basic/JSON/json_test.py	1;"	kind:file	line:1
+k	py2 cv2/cv2.py	/^k = cv2.waitKey(0)$/;"	kind:variable	line:7
+language_survey.py	Python Basic/PYTest/Survey/language_survey.py	1;"	kind:file	line:1
+last	Python Basic/PYTest/Name/names.py	/^    last = input("Please give me a last name: ")$/;"	kind:variable	line:8
+lines	Python Basic/File IO/file_io.py	/^    lines = file_object.readlines()$/;"	kind:variable	line:10
+magicians	Python Basic/code.py	/^magicians = ['alice', 'david', 'carolina']$/;"	kind:variable	line:47
+make_pizza	Python Basic/code.py	/^def make_pizza(size, *toppings):$/;"	kind:function	line:220
+make_pizza	Python Basic/code.py	/^from pizza import make_pizza$/;"	kind:namespace	line:252
+make_pizza	Python Basic/pizza.py	/^def make_pizza(size, *toppings):$/;"	kind:function	line:1
+motorcycles	Python Basic/code.py	/^motorcycles = ['honda', 'yamaha', 'suzuki']$/;"	kind:variable	line:15
+my_car.py	Python Basic/Class/my_car.py	1;"	kind:file	line:1
+my_dog	Python Basic/Class/class.py	/^my_dog = Dog("Willie", 6)$/;"	kind:variable	line:13
+my_new_car	Python Basic/Class/my_car.py	/^my_new_car = car.Car('audi', 'a4', 2016)$/;"	kind:variable	line:6
+my_tesla	Python Basic/Class/my_car.py	/^my_tesla = electric_car.ElectricCar('tesla', 'model s', 2016)$/;"	kind:variable	line:11
+name	Python Basic/code.py	/^name = "ada lovelace"$/;"	kind:variable	line:2
+name_function.py	Python Basic/PYTest/Name/name_function.py	1;"	kind:file	line:1
+names.py	Python Basic/PYTest/Name/names.py	1;"	kind:file	line:1
+new_alien	Python Basic/code.py	/^    new_alien = {'color': 'green', 'points': 5, 'speed': 'slow'}$/;"	kind:variable	line:155
+new_numbers	Python Basic/JSON/json_test.py	/^    new_numbers = json.load(file_object)$/;"	kind:variable	line:12
+nfc	Python Basic/code.py	/^nfc = ["Packers", "49ers"]$/;"	kind:variable	line:266
+np	Numpy Basic/numpy.py	/^import numpy as np$/;"	kind:namespace	line:1
+np	py2 cv2/cv2.py	/^import numpy as np$/;"	kind:namespace	line:2
+numbers	Python Basic/JSON/json_test.py	/^numbers = [2, 3, 5, 7, 11, 13]$/;"	kind:variable	line:3
+numbers	Python Basic/code.py	/^numbers = list(range(1, 6))$/;"	kind:variable	line:55
+numpy.py	Numpy Basic/numpy.py	1;"	kind:file	line:1
+one	Python Basic/Error/error_code.py	/^    one = int(input('First number: '))$/;"	kind:variable	line:2
+pi_string	Python Basic/File IO/file_io.py	/^pi_string = ''$/;"	kind:variable	line:16
+pizza	Python Basic/code.py	/^import pizza$/;"	kind:namespace	line:248
+pizza	Python Basic/code.py	/^pizza = {$/;"	kind:variable	line:160
+pizza.py	Python Basic/pizza.py	1;"	kind:file	line:1
+players	Python Basic/code.py	/^players = ['charles', 'martina', 'michael', 'florence', 'eli']$/;"	kind:variable	line:73
+popped_element	Python Basic/code.py	/^popped_element = motorcycles.pop()$/;"	kind:variable	line:25
+python_stl.py	Python Basic/python_stl.py	1;"	kind:file	line:1
+question	Python Basic/PYTest/Survey/language_survey.py	/^question = 'What language did you first learn to speak?'$/;"	kind:variable	line:3
+read_odometer	Python Basic/Class/car.py	/^    def read_odometer(self):$/;"	kind:member	line:13
+result	Python Basic/Error/error_code.py	/^    result = one \/ two$/;"	kind:variable	line:4
+result	Python Basic/python_stl.py	/^result = (i for i in range(1, 20))$/;"	kind:variable	line:13
+roll_over	Python Basic/Class/class.py	/^    def roll_over(self):$/;"	kind:member	line:10
+setUp	Python Basic/PYTest/Survey/test_survey.py	/^    def setUp(self):$/;"	kind:member	line:7
+show_question	Python Basic/PYTest/Survey/survey.py	/^    def show_question(self):$/;"	kind:member	line:7
+show_response	Python Basic/PYTest/Survey/survey.py	/^    def show_response(self):$/;"	kind:member	line:13
+sit	Python Basic/Class/class.py	/^    def sit(self):$/;"	kind:member	line:7
+square	Python Basic/code.py	/^square = list()$/;"	kind:variable	line:60
+store_response	Python Basic/PYTest/Survey/survey.py	/^    def store_response(self, response):$/;"	kind:member	line:10
+survey	Python Basic/PYTest/Survey/language_survey.py	/^survey = AnonymousSurvey(question)$/;"	kind:variable	line:4
+survey.py	Python Basic/PYTest/Survey/survey.py	1;"	kind:file	line:1
+teams	Python Basic/code.py	/^teams = ["Packers", "49ers", "Ravens", "Patriots"]$/;"	kind:variable	line:272
+test_first_last_name	Python Basic/PYTest/Name/test_name_function.py	/^    def test_first_last_name(self):$/;"	kind:member	line:7
+test_list	Python Basic/code.py	/^test_list = []$/;"	kind:variable	line:103
+test_middle_name	Python Basic/PYTest/Name/test_name_function.py	/^    def test_middle_name(self):$/;"	kind:member	line:11
+test_name_function.py	Python Basic/PYTest/Name/test_name_function.py	1;"	kind:file	line:1
+test_store_multiple_response	Python Basic/PYTest/Survey/test_survey.py	/^    def test_store_multiple_response(self):$/;"	kind:member	line:16
+test_store_single_response	Python Basic/PYTest/Survey/test_survey.py	/^    def test_store_single_response(self):$/;"	kind:member	line:12
+test_survey.py	Python Basic/PYTest/Survey/test_survey.py	1;"	kind:file	line:1
+two	Python Basic/Error/error_code.py	/^    two = int(input('Second number: '))$/;"	kind:variable	line:3
+unittest	Python Basic/PYTest/Name/test_name_function.py	/^import unittest$/;"	kind:namespace	line:1
+unittest	Python Basic/PYTest/Survey/test_survey.py	/^import unittest$/;"	kind:namespace	line:1
+update_odometer	Python Basic/Class/car.py	/^    def update_odometer(self, milege):$/;"	kind:member	line:16
+user	Python Basic/code.py	/^user = 'marie'$/;"	kind:variable	line:100
+user_profile	Python Basic/code.py	/^user_profile = build_profile($/;"	kind:variable	line:242
+users	Python Basic/code.py	/^users = {$/;"	kind:variable	line:179
