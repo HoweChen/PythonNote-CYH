@@ -13,7 +13,10 @@ Dog	Python Basic/Class/class.py	/^class Dog():$/;"	kind:class	line:1
 ElectricCar	Python Basic/Class/electric_car.py	/^class ElectricCar(car.Car):$/;"	kind:class	line:4
 NameTestCase	Python Basic/PYTest/Name/test_name_function.py	/^class NameTestCase(unittest.TestCase):$/;"	kind:class	line:5
 OrderedDict	Python Basic/python_stl.py	/^from collections import OrderedDict$/;"	kind:namespace	line:1
+Settings	PyGame/alien_invasion.py	/^from setting import Settings$/;"	kind:namespace	line:3
+Settings	PyGame/setting.py	/^class Settings():$/;"	kind:class	line:1
 TestAnonymousSurvey	Python Basic/PYTest/Survey/test_survey.py	/^class TestAnonymousSurvey(unittest.TestCase):$/;"	kind:class	line:5
+__init__	PyGame/setting.py	/^    def __init__(self):$/;"	kind:member	line:3
 __init__	Python Basic/Class/car.py	/^    def __init__(self, battery_size=70):$/;"	kind:member	line:28
 __init__	Python Basic/Class/car.py	/^    def __init__(self, make, model, year):$/;"	kind:member	line:3
 __init__	Python Basic/Class/class.py	/^    def __init__(self, name, age):$/;"	kind:member	line:3
@@ -23,6 +26,7 @@ a	Python Basic/code.py	/^a = 1$/;"	kind:variable	line:258
 afc	Python Basic/code.py	/^afc = ["Ravens", "Patriots"]$/;"	kind:variable	line:267
 alien	Python Basic/code.py	/^alien = []$/;"	kind:variable	line:152
 alien_0	Python Basic/code.py	/^alien_0 = {'color': 'green', 'points': 5}$/;"	kind:variable	line:110
+alien_invasion.py	PyGame/alien_invasion.py	1;"	kind:file	line:1
 another_player	Python Basic/code.py	/^another_player = players$/;"	kind:variable	line:85
 another_player	Python Basic/code.py	/^another_player = players[:]$/;"	kind:variable	line:90
 answer	Python Basic/PYTest/Survey/language_survey.py	/^    answer = input('Input your answer: \\n')$/;"	kind:variable	line:8
@@ -71,7 +75,10 @@ magicians	Python Basic/code.py	/^magicians = ['alice', 'david', 'carolina']$/;"	
 make_pizza	Python Basic/code.py	/^def make_pizza(size, *toppings):$/;"	kind:function	line:220
 make_pizza	Python Basic/code.py	/^from pizza import make_pizza$/;"	kind:namespace	line:252
 make_pizza	Python Basic/pizza.py	/^def make_pizza(size, *toppings):$/;"	kind:function	line:1
+matplotlib	Matplotlib/mpl_square.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:1
+matplotlib	Matplotlib/scatter_squares.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:1
 motorcycles	Python Basic/code.py	/^motorcycles = ['honda', 'yamaha', 'suzuki']$/;"	kind:variable	line:15
+mpl_square.py	Matplotlib/mpl_square.py	1;"	kind:file	line:1
 my_car.py	Python Basic/Class/my_car.py	1;"	kind:file	line:1
 my_dog	Python Basic/Class/class.py	/^my_dog = Dog("Willie", 6)$/;"	kind:variable	line:13
 my_new_car	Python Basic/Class/my_car.py	/^my_new_car = car.Car('audi', 'a4', 2016)$/;"	kind:variable	line:6
@@ -88,26 +95,36 @@ numbers	Python Basic/JSON/json_test.py	/^numbers = [2, 3, 5, 7, 11, 13]$/;"	kind
 numbers	Python Basic/code.py	/^numbers = list(range(1, 6))$/;"	kind:variable	line:55
 numpy.py	Numpy Basic/numpy.py	1;"	kind:file	line:1
 one	Python Basic/Error/error_code.py	/^    one = int(input('First number: '))$/;"	kind:variable	line:2
+os	STL/osTest.py	/^import os$/;"	kind:namespace	line:1
+osTest.py	STL/osTest.py	1;"	kind:file	line:1
 pi_string	Python Basic/File IO/file_io.py	/^pi_string = ''$/;"	kind:variable	line:16
 pizza	Python Basic/code.py	/^import pizza$/;"	kind:namespace	line:248
 pizza	Python Basic/code.py	/^pizza = {$/;"	kind:variable	line:160
 pizza.py	Python Basic/pizza.py	1;"	kind:file	line:1
 players	Python Basic/code.py	/^players = ['charles', 'martina', 'michael', 'florence', 'eli']$/;"	kind:variable	line:73
+plt	Matplotlib/mpl_square.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:1
+plt	Matplotlib/scatter_squares.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:1
 popped_element	Python Basic/code.py	/^popped_element = motorcycles.pop()$/;"	kind:variable	line:25
+pygame	PyGame/alien_invasion.py	/^import pygame$/;"	kind:namespace	line:2
 python_stl.py	Python Basic/python_stl.py	1;"	kind:file	line:1
 question	Python Basic/PYTest/Survey/language_survey.py	/^question = 'What language did you first learn to speak?'$/;"	kind:variable	line:3
 read_odometer	Python Basic/Class/car.py	/^    def read_odometer(self):$/;"	kind:member	line:13
 result	Python Basic/Error/error_code.py	/^    result = one \/ two$/;"	kind:variable	line:4
 result	Python Basic/python_stl.py	/^result = (i for i in range(1, 20))$/;"	kind:variable	line:13
 roll_over	Python Basic/Class/class.py	/^    def roll_over(self):$/;"	kind:member	line:10
+run_game	PyGame/alien_invasion.py	/^def run_game():$/;"	kind:function	line:6
+scatter_squares.py	Matplotlib/scatter_squares.py	1;"	kind:file	line:1
 setUp	Python Basic/PYTest/Survey/test_survey.py	/^    def setUp(self):$/;"	kind:member	line:7
+setting.py	PyGame/setting.py	1;"	kind:file	line:1
 show_question	Python Basic/PYTest/Survey/survey.py	/^    def show_question(self):$/;"	kind:member	line:7
 show_response	Python Basic/PYTest/Survey/survey.py	/^    def show_response(self):$/;"	kind:member	line:13
 sit	Python Basic/Class/class.py	/^    def sit(self):$/;"	kind:member	line:7
+square	Matplotlib/mpl_square.py	/^square = [1, 4, 9, 16, 25]$/;"	kind:variable	line:4
 square	Python Basic/code.py	/^square = list()$/;"	kind:variable	line:60
 store_response	Python Basic/PYTest/Survey/survey.py	/^    def store_response(self, response):$/;"	kind:member	line:10
 survey	Python Basic/PYTest/Survey/language_survey.py	/^survey = AnonymousSurvey(question)$/;"	kind:variable	line:4
 survey.py	Python Basic/PYTest/Survey/survey.py	1;"	kind:file	line:1
+sys	PyGame/alien_invasion.py	/^import sys$/;"	kind:namespace	line:1
 teams	Python Basic/code.py	/^teams = ["Packers", "49ers", "Ravens", "Patriots"]$/;"	kind:variable	line:272
 test_first_last_name	Python Basic/PYTest/Name/test_name_function.py	/^    def test_first_last_name(self):$/;"	kind:member	line:7
 test_list	Python Basic/code.py	/^test_list = []$/;"	kind:variable	line:103
@@ -123,3 +140,6 @@ update_odometer	Python Basic/Class/car.py	/^    def update_odometer(self, milege
 user	Python Basic/code.py	/^user = 'marie'$/;"	kind:variable	line:100
 user_profile	Python Basic/code.py	/^user_profile = build_profile($/;"	kind:variable	line:242
 users	Python Basic/code.py	/^users = {$/;"	kind:variable	line:179
+x_value	Matplotlib/mpl_square.py	/^x_value = [1, 2, 3, 4, 5]$/;"	kind:variable	line:3
+x_values	Matplotlib/scatter_squares.py	/^x_values = list(range(1, 1001))$/;"	kind:variable	line:6
+y_values	Matplotlib/scatter_squares.py	/^y_values = [x**2 for x in x_values]$/;"	kind:variable	line:7
