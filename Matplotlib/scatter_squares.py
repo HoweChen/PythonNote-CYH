@@ -16,5 +16,6 @@ plt.ylabel("Square of Value", fontsize=14)
 plt.tick_params(axis='both', which='major', labelsize=14)
 plt.axis([0, 1100, 0, 1100000])
 
-
+plt.savefig('./Matplotlib/squares_plot.png', bbox_inches='tight')
 plt.show()
+
