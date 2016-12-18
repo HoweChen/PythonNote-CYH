@@ -13,9 +13,11 @@ Dog	Python Basic/Class/class.py	/^class Dog():$/;"	kind:class	line:1
 ElectricCar	Python Basic/Class/electric_car.py	/^class ElectricCar(car.Car):$/;"	kind:class	line:4
 NameTestCase	Python Basic/PYTest/Name/test_name_function.py	/^class NameTestCase(unittest.TestCase):$/;"	kind:class	line:5
 OrderedDict	Python Basic/python_stl.py	/^from collections import OrderedDict$/;"	kind:namespace	line:1
+RandomWalk	Matplotlib/random_walk.py	/^class RandomWalk():$/;"	kind:class	line:5
 Settings	PyGame/alien_invasion.py	/^from setting import Settings$/;"	kind:namespace	line:3
 Settings	PyGame/setting.py	/^class Settings():$/;"	kind:class	line:1
 TestAnonymousSurvey	Python Basic/PYTest/Survey/test_survey.py	/^class TestAnonymousSurvey(unittest.TestCase):$/;"	kind:class	line:5
+__init__	Matplotlib/random_walk.py	/^    def __init__(self, num_points=5000):$/;"	kind:member	line:7
 __init__	PyGame/setting.py	/^    def __init__(self):$/;"	kind:member	line:3
 __init__	Python Basic/Class/car.py	/^    def __init__(self, battery_size=70):$/;"	kind:member	line:28
 __init__	Python Basic/Class/car.py	/^    def __init__(self, make, model, year):$/;"	kind:member	line:3
@@ -38,6 +40,7 @@ car	Python Basic/Class/my_car.py	/^import car$/;"	kind:namespace	line:3
 car.py	Python Basic/Class/car.py	1;"	kind:file	line:1
 cars	Python Basic/code.py	/^cars = ['audi', 'subaru', 'bmw', 'toyata']$/;"	kind:variable	line:28
 cars	Python Basic/code.py	/^cars = ['bmw', 'audi', 'toyota', 'subaru']$/;"	kind:variable	line:40
+choice	Matplotlib/random_walk.py	/^from random import choice$/;"	kind:namespace	line:1
 class.py	Python Basic/Class/class.py	1;"	kind:file	line:1
 code.py	Python Basic/code.py	1;"	kind:file	line:1
 cv2	py2 cv2/cv2.py	/^import cv2$/;"	kind:namespace	line:1
@@ -55,6 +58,7 @@ favourite_language	Python Basic/code.py	/^favourite_language = {$/;"	kind:variab
 favourite_languages	Python Basic/python_stl.py	/^favourite_languages = OrderedDict()$/;"	kind:variable	line:3
 fileName	Python Basic/JSON/json_test.py	/^fileName = '\/users\/howechen\/GitHub\/PythonNote-CYH\/Python Basic\/JSON\/numbers.json'$/;"	kind:variable	line:4
 file_io.py	Python Basic/File IO/file_io.py	1;"	kind:file	line:1
+fill_walk	Matplotlib/random_walk.py	/^    def fill_walk(self):$/;"	kind:member	line:19
 first	Python Basic/PYTest/Name/names.py	/^    first = input("\\nPlease give me a first name: ")$/;"	kind:variable	line:5
 formatted_name	Python Basic/PYTest/Name/names.py	/^    formatted_name = get_formatted_name(first, last)$/;"	kind:variable	line:11
 get_descriptive_name	Python Basic/Class/car.py	/^    def get_descriptive_name(self):$/;"	kind:member	line:9
@@ -62,6 +66,7 @@ get_formatted_name	Python Basic/PYTest/Name/name_function.py	/^def get_formatted
 get_formatted_name	Python Basic/PYTest/Name/names.py	/^from name_function import get_formatted_name$/;"	kind:namespace	line:1
 get_formatted_name	Python Basic/PYTest/Name/test_name_function.py	/^from name_function import get_formatted_name$/;"	kind:namespace	line:2
 get_range	Python Basic/Class/car.py	/^    def get_range(self):$/;"	kind:member	line:34
+get_step	Matplotlib/random_walk.py	/^    def get_step():$/;"	kind:member	line:13
 greet_user	Python Basic/code.py	/^def greet_user(username):$/;"	kind:function	line:204
 img	py2 cv2/cv2.py	/^img = cv2.imread('\/Users\/howechen\/GitHub\/PythonNote-CYH\/pyTest\/Lenna.png')$/;"	kind:variable	line:4
 increment_odometer	Python Basic/Class/car.py	/^    def increment_odometer(self, miles):$/;"	kind:member	line:22
@@ -76,6 +81,7 @@ make_pizza	Python Basic/code.py	/^def make_pizza(size, *toppings):$/;"	kind:func
 make_pizza	Python Basic/code.py	/^from pizza import make_pizza$/;"	kind:namespace	line:252
 make_pizza	Python Basic/pizza.py	/^def make_pizza(size, *toppings):$/;"	kind:function	line:1
 matplotlib	Matplotlib/mpl_square.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:1
+matplotlib	Matplotlib/random_walk.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:2
 matplotlib	Matplotlib/scatter_squares.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:1
 motorcycles	Python Basic/code.py	/^motorcycles = ['honda', 'yamaha', 'suzuki']$/;"	kind:variable	line:15
 mpl_square.py	Matplotlib/mpl_square.py	1;"	kind:file	line:1
@@ -103,16 +109,20 @@ pizza	Python Basic/code.py	/^pizza = {$/;"	kind:variable	line:160
 pizza.py	Python Basic/pizza.py	1;"	kind:file	line:1
 players	Python Basic/code.py	/^players = ['charles', 'martina', 'michael', 'florence', 'eli']$/;"	kind:variable	line:73
 plt	Matplotlib/mpl_square.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:1
+plt	Matplotlib/random_walk.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:2
 plt	Matplotlib/scatter_squares.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:1
+point_numbers	Matplotlib/random_walk.py	/^point_numbers = list(range(rw.num_points))$/;"	kind:variable	line:40
 popped_element	Python Basic/code.py	/^popped_element = motorcycles.pop()$/;"	kind:variable	line:25
 pygame	PyGame/alien_invasion.py	/^import pygame$/;"	kind:namespace	line:2
 python_stl.py	Python Basic/python_stl.py	1;"	kind:file	line:1
 question	Python Basic/PYTest/Survey/language_survey.py	/^question = 'What language did you first learn to speak?'$/;"	kind:variable	line:3
+random_walk.py	Matplotlib/random_walk.py	1;"	kind:file	line:1
 read_odometer	Python Basic/Class/car.py	/^    def read_odometer(self):$/;"	kind:member	line:13
 result	Python Basic/Error/error_code.py	/^    result = one \/ two$/;"	kind:variable	line:4
 result	Python Basic/python_stl.py	/^result = (i for i in range(1, 20))$/;"	kind:variable	line:13
 roll_over	Python Basic/Class/class.py	/^    def roll_over(self):$/;"	kind:member	line:10
 run_game	PyGame/alien_invasion.py	/^def run_game():$/;"	kind:function	line:6
+rw	Matplotlib/random_walk.py	/^rw = RandomWalk(50000)$/;"	kind:variable	line:38
 scatter_squares.py	Matplotlib/scatter_squares.py	1;"	kind:file	line:1
 setUp	Python Basic/PYTest/Survey/test_survey.py	/^    def setUp(self):$/;"	kind:member	line:7
 setting.py	PyGame/setting.py	1;"	kind:file	line:1
