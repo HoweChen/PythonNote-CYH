@@ -1,11 +1,29 @@
 from die import Die
+import pygal
 
-die = Die()
+die_1 = Die()
+die_2 = Die()
 
-result = []
+results = []
 
-for roll_num in range(100):
-    result = die.roll()
-    result.append(result)
+for roll_num in range(1000):
+    result = die_1.roll() + die_2.roll()
+    results.append(result)
 
-print result
+# print(results)
+frequencies = []
+max_result = die_1.num_sides + die_2.num_sides
+for value in range(2, max_result + 1):
+    frequencies.append(results.count(value))
+
+print(frequencies)
+
+hist = pygal.Bar()
+
+hist.title = 'Results of rolling on D6 1000 times.'
+hist.x_labels = ['2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
+hist.x_title = 'Result'
+hist.y_title = 'Frequency of Result'
+
+hist.add('D6', frequencies)
+hist.render_to_file('./Matplotlib/Die/die_visual.svg')
