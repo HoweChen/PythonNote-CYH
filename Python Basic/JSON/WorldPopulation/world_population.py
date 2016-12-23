@@ -27,6 +27,6 @@ for pop_dict in pop_data:
 wm = pygal.maps.world.World()
 wm.title = 'World Population in 2010, by Country'
 wm.add('2010', pygal_data)
-print(pygal_data)
+# print([item for item in pygal_data.items()])
 
 wm.render_to_file('./Python Basic/JSON/WorldPopulation/world_population.svg')
