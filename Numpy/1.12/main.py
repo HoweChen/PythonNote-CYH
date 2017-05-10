@@ -9,5 +9,5 @@ def numpysum(n):
     return c
 
 
-size = int(sys.argv[1])
-print(numpysum(size))
+size = input("Please input the size")
+print(numpysum(int(size)))
