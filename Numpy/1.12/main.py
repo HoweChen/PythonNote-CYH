@@ -12,5 +12,11 @@ def numpysum(n):
 
 # size = input("Please input the size")
 size = 10
-print(numpysum(int(size)))
+print(numpysum(size))
 
+
+# multi-dimentional array
+
+m = numpy.array([numpy.arange(size), numpy.arange(size)])
+print(m)
+print(m.shape)
