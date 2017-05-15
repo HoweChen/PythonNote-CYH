@@ -67,8 +67,9 @@ for card in sorted_deck:
     print(card)
 
 # The reason why choice(deck) would automatically worked on deck._cards is that
-#  we re-write the __getitem__ method so when we use random.choice() it calls
-# the __getitem__ method so that it would return the self._cards member
+#  we re-write the __getitem__ method to get the return of self cards position
+# so we use deck[position] would return the _cards, so that random.choice could
+# be used on this sequence, which is deck._cards
 
 # class FrenchDeck:
 #     ranks = [str(n) for n in range(2, 11)] + list('JQKA')
