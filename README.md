@@ -1,3 +1,3 @@
 # About
 
-This repo is a note about Python of my self.
+This repo is a note about Python of myself.
