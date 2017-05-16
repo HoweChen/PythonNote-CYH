@@ -11,6 +11,9 @@ class Vector:
         return 'Vector({0},{1})'.format(self.x, self.y)
         # or return 'Vector(%r, %r)' % (self.x, self.y)
 
+    def __abs__(self):
+        return hypot(self.x, self.y)
+
     def __bool__(self):
         return bool(abs(self))
 
