@@ -37,6 +37,7 @@ for itr, val in randomCards:
     print(itr + ' of ' + val)
 
 # print top 3 cards of the deck
+print('Top 3 cards of the deck')
 print(deck[:3])
 # iterable deck
 for card in deck:
@@ -46,15 +47,18 @@ for card in reversed(deck):
     print(card)
 
 # keyword "in" is also available
+print('Keyword "in" is also available')
 print(Card('Q', 'hearts') in deck)  # True
 print(Card('Q', 'fuck') in deck)  # False
 
 # sort the deck according to its suit_value and its rank_value
+print('Sort the deck according to its suit_value and its rank_value')
 suit_values = dict(spades=3, hearts=2, diamonds=1, clubs=0)
 
 
 def spades_high(card):
     rank_value = FrenchDeck.ranks.index(card.rank)
+    # print(rank_value)
     return rank_value * len(suit_values) + suit_values[card.suit]
 
 
