@@ -229,3 +229,54 @@ StopIteration
 所以，我们创建了一个generator后，基本上永远不会调用`next()`方法，而是通过`for`循环来迭代它。
 
 generator非常强大。如果推算的算法比较复杂，用类似列表生成式的`for`循环无法实现的时候，还可以用函数来实现。
+
+
+# 对 tuple list 进行的排序
+
+我的同事Axel Hecht 给我展示了一些我所不知道的关于python排序的东西。 在python里你可以对一个元组进行排序。例子是最好的说明：
+
+    >>> items = [(1, 'B'), (1, 'A'), (2, 'A'), (0, 'B'), (0, 'a')]
+    >>> sorted(items)
+    [(0, 'B'), (0, 'a'), (1, 'A'), (1, 'B'), (2, 'A')]
+
+默认情况下内置的sort和sorted函数接收的参数是元组时，他将会先按元组的第一个元素进行排序再按第二个元素进行排序。 然而，注意到结果中(0, 'B’)在(0, 'a')的前面。这是因为大写字母B的ASCII编码比a小。然而，假设你想要一些更人性的排序并且不关注大小写。你或许会这么做：
+
+    >>> sorted(items, key=str.lower)
+    Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+    TypeError: descriptor 'lower' requires a 'str' object but received a 'tuple'
+
+我们将会得到一个错误，因为他不能正确处理元组的第一部分。（注：原文作者估计想说元组中第一项是数字，不能使用lower这个方法；正确的原因提示的很明显了，是因为你传递的是一个元组，而元组是没有lower这个方法的）
+
+我们可以试着写一个lambda函数(eg.sorted(items, key=lambda x: x.lower() if isinstance(x, str) else x)),他将不会工作因为你只处理了元组的一个元素。（注：同上面，作者这么做必然是错的，思考给这个lambda传一个元组,返回的是什么？）
+
+言归正传，下面就是你应该怎么做的方法。一个lambda，它会返回一个元组:
+
+    >>> sorted(items, key=lambda x: (x[0], x[1].lower()))
+    [(0, 'a'), (0, 'B'), (1, 'A'), (1, 'B'), (2, 'A')]
+
+如果是 sorted(items, key=lambda x: (x[1].lower())) 那么结果就是针对每一个 iterator 也就是每一个 tuple 里的第二个元素进行排序，那么原文里头的呢，是先对第一个元素进行排序，然后再对第二个元素进行排序。
+
+
+
+现在你完成了它！谢谢Axel的分享！
+
+作为你还在读本博文的奖励...
+
+我确信你知道你可以倒序排列，仅仅使用sorted(items, reverse=True, …)，但是你怎么根据关键字来进行不同的排序？
+
+使用lambda函数返回元组的技巧，下面是一个我们排序一个稍微高级的数据结构:
+
+    >>> peeps = [{'name': 'Bill', 'salary': 1000}, {'name': 'Bill', 'salary': 500}, {'name': 'Ted', 'salary': 500}]
+
+现在，使用lambda函数返回一个元组的特性来排序:
+
+    >>> sorted(peeps, key=lambda x: (x['name'], x['salary']))
+    [{'salary': 500, 'name': 'Bill'}, {'salary': 1000, 'name': 'Bill'}, {'salary': 500, 'name': 'Ted'}]
+
+很有意思，对吧？Bill 在Ted的前面，并且500在1000的前面。但是如何在相同的 name 下，对 salary 反向排序？很简单，对它取反:
+
+    >>> sorted(peeps, key=lambda x: (x['name'], -x['salary']))
+    [{'salary': 1000, 'name': 'Bill'}, {'salary': 500, 'name': 'Bill'}, {'salary': 500, 'name': 'Ted'}]
+
+原文地址：http://www.peterbe.com/plog/in-python-you-sort-with-a-tuple
