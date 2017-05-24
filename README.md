@@ -284,6 +284,8 @@ generator非常强大。如果推算的算法比较复杂，用类似列表生�
 
 # 元组拆包，或者称之为可迭代对象拆包 (来自[流畅的 Python](http://www.ituring.com.cn/book/1564))
 
+[拓展阅读](https://www.python.org/dev/peps/pep-3132/)
+
 
 
 ```python
