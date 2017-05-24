@@ -282,7 +282,7 @@ generator非常强大。如果推算的算法比较复杂，用类似列表生�
 原文地址：http://www.peterbe.com/plog/in-python-you-sort-with-a-tuple
 
 
-元组拆包，或者称之为可迭代对象拆包 (来自流畅的 Python)
+# 元组拆包，或者称之为可迭代对象拆包 (来自[流畅的 Python](http://www.ituring.com.cn/book/1564))
 
 
 
