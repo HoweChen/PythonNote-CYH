@@ -1,6 +1,6 @@
 # About
 
-This repo is a note about Python of myself.
+This repo is a note about Python which I collect them or summerize them.
 
 # 不要用 for 循环去修改其中的元素
 
