@@ -350,6 +350,6 @@ generator非常强大。如果推算的算法比较复杂，用类似列表生�
 >>> a, b, rest (0, 1, [])
 ```
 
-# .append() 和 .extend() 的区别
+# list.append() 和 list.extend() 的区别 (tuple have no append and extend method)
 
 append 加入元素，extend 加入可迭代对象。
