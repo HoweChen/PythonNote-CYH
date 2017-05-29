@@ -366,3 +366,9 @@ TypeError: descriptor 'lower' requires a 'str' object but received a 'tuple'
 # list.append() 和 list.extend() 的区别 (tuple have no append and extend method)
 
 append 加入元素，extend 加入可迭代对象。
+
+<script type="text/javascript"   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+$$ evidence_{i}=\sum _{j}W_{ij}x_{j}+b_{i} $$
