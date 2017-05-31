@@ -1242,3 +1242,148 @@ Python itself provides several decorators: `property`, `staticmethod`, etc.
 - Twisted to fake inlining asynchronous functions calls.
 
 This really is a large playground.
+
+# 关于 Dictionary 的 View Object:
+
+在 Python 3 中的字典 Dictionary 中，有 ```dict.keys() ```，```dict.values()```和 ```dict.items()```，使用它们返回的都将是被称作是  ```View objects``` 的对象。
+
+
+
+在 python 3 的文档中：
+
+> The objects returned by [`dict.keys()`](https://docs.python.org/3.3/library/stdtypes.html#dict.keys), [`dict.values()`](https://docs.python.org/3.3/library/stdtypes.html#dict.values) and [`dict.items()`](https://docs.python.org/3.3/library/stdtypes.html#dict.items) are *view objects*. They provide a dynamic view on the dictionary’s entries, which means that when the dictionary changes, the view reflects these changes.
+>
+> Dictionary views can be iterated over to yield their respective data, and support membership tests:
+>
+> - `len(dictview)`
+>
+>   Return the number of entries in the dictionary.
+>
+>
+> - `iter(dictview)`
+>
+>   Return an iterator over the keys, values or items (represented as tuples of `(key, value)`) in the dictionary.Keys and values are iterated over in an arbitrary order which is non-random, varies across Python implementations, and depends on the dictionary’s history of insertions and deletions. If keys, values and items views are iterated over with no intervening modifications to the dictionary, the order of items will directly correspond. This allows the creation of `(value, key)` pairs using [`zip()`](https://docs.python.org/3.3/library/functions.html#zip): `pairs = zip(d.values(),d.keys())`. Another way to create the same list is `pairs = [(v, k) for (k, v) in d.items()]`.Iterating views while adding or deleting entries in the dictionary may raise a [`RuntimeError`](https://docs.python.org/3.3/library/exceptions.html#RuntimeError) or fail to iterate over all entries.
+
+接下来我们可以做个试验：
+
+
+
+```python
+x = {'a':1,'b':2}
+In [2]: x.items()
+Out[2]: dict_items([('a', 1), ('b', 2)])
+    
+In [3]: x.values()
+Out[3]: dict_values([1, 2])
+    
+In [4]: x.keys()
+Out[4]: dict_keys(['a', 'b'])
+```
+
+我们可以看到整个 dict 中 keys，values 和 items 的视图。
+
+
+
+```python
+In [8]: len(x.keys())
+Out[8]: 2
+
+
+In [9]: len(x.values())
+Out[9]: 2
+
+
+In [10]: len(x.items())
+Out[10]: 2
+```
+
+我们可以获得这个 object 的一些属性。
+
+
+
+接下来，我们这样做：
+
+```python
+In [11]: iter(x.items())
+Out[11]: <dict_itemiterator at 0x1103661d8>
+```
+
+
+
+我们就将这个 view object 转化成了一个iterator
+
+
+
+如果我们想输出这个 iterator 的值，就用 next(itr)
+
+```python
+In [12]: next(iter(x.items()))
+Out[12]: ('a', 1)
+```
+
+返回的就是一个 tuple。
+
+
+
+还有一个函数，叫做 `iteritems()`，这个函数在 Python3 中已经被弃用了，现在的 `items()`函数实现的就是`iteritems()`的功能，这里就不再赘述。
+
+
+
+# 关于generator, iterator 以及 range() 的一些问题
+
+`a = range(100)`是一个 iterator 吗？
+
+不是。
+
+是一个 generator 吗？ 
+
+也不是。
+
+实时上 `generator`是`iterator`的一个特殊情况。
+
+
+
+`range()`实际上是一个 class，这个通过这个 class 创造出来得实例（例如`range(100)`）是不可变的但是可迭代的对象 Object：immutable iterable objects.
+
+所以 range() 创造出来得只是一个对象。
+
+
+
+这个问题来自于https://stackoverflow.com/a/13092317
+
+`range` is a <u>class of immutable iterable objects</u>. Their iteration behavior can be compared to `list`s: you can't call `next` directly on them; you have to get an iterator by using `iter`.
+
+So no, `range` is not a generator.
+
+You may be thinking, "why didn't they make it directly iterable"? Well, `range`s have some useful properties that wouldn't be possible that way:
+
+- They are immutable, so they can be used as dictionary keys.
+- They have the `start`, `stop` and `step` attributes (since Python 3.3), `count` and `index`methods and they support `in`, `len` and `__getitem__` operations.
+- You can iterate over the same `range` multiple times.
+
+------
+
+```python
+>>> myrange = range(1, 21, 2)
+>>> myrange.start
+1
+>>> myrange.step
+2
+>>> myrange.index(17)
+8
+>>> myrange.index(18)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: 18 is not in range
+>>> it = iter(myrange)
+>>> it
+<range_iterator object at 0x7f504a9be960>
+>>> next(it)
+1
+>>> next(it)
+3
+>>> next(it)
+5
+```
+
+但是 range() 这个类自身的方法当中，可以有类似于生成器的使用方法，例如`start()`, `step()`.
