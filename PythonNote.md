@@ -1382,8 +1382,41 @@ ValueError: 18 is not in range
 1
 >>> next(it)
 3
->>> next(it)
+>>> next(it) 
 5
 ```
 
 但是 range() 这个类自身的方法当中，可以有类似于生成器的使用方法，例如`start()`, `step()`.
+
+# 关于字典 update()
+
+update() 返回 None，并不返回一个新的数组
+
+如果字典当中有同样的 key，update() 只会把新的替换旧的，而不会因为大小而进行改变
+
+
+
+```python
+x = {'a': 1, 'b': 2}
+y = {'b': 3, 'c': 4}
+
+x.update(y)
+
+{'a': 1, 'b': 3, 'c': 4}
+```
+
+
+
+如果我们对调一个顺序：
+
+
+
+```python
+x = {'a': 1, 'b': 3}
+y = {'b': 2, 'c': 4}
+
+x.update(y)
+
+{'a': 1, 'b': 2, 'c': 4}
+```
+
