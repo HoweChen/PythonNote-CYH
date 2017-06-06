@@ -1440,4 +1440,29 @@ print(list(c))  # 结果将是一个空的 list, 因为迭代器 c 当中已经�
 
 同样，当我们对一个 iterator 进行 next 操作之后，被抛出的元素即刻被释放，再也找不回来了
 
-所以如果我们先 next() 了一个迭代器，再 list 的话，结果不是原来版本的迭代器了 
+所以如果我们先 next() 了一个迭代器，再 list 的话，结果不是原来版本的迭代器了
+
+所以，迭代器是不能 reset 的，唯一的办法就是复制一个新的迭代器。
+
+I see many answers suggesting [itertools.tee](http://docs.python.org/library/itertools.html?highlight=itertools.tee#itertools.tee), but that's ignoring one crucial warning in the docs for it:
+
+> This itertool may require significant auxiliary storage (depending on how much temporary data needs to be stored). In general, if one iterator uses most or all of the data before another iterator starts, it is faster to use `list()` instead of `tee()`.
+
+Basically, `tee` is designed for those situation where two (or more) clones of one iterator, while "getting out of sync" with each other, don't do so *by much* -- rather, they say in the same "vicinity" (a few items behind or ahead of each other). Not suitable for the OP's problem of "redo from the start".
+
+`L = list(DictReader(...))` on the other hand is perfectly suitable, as long as the list of dicts can fit comfortably in memory. A new "iterator from the start" (very lightweight and low-overhead) can be made at any time with `iter(L)`, and used in part or in whole without affecting new or existing ones; other access patterns are also easily available.
+
+# 如何将 26 个字母和它们的数字序号组成一个 Dictionary
+
+```python
+>>> import string
+
+>>> a = list(string.ascii_lowercase)  # 产生所有的小写字母
+... b = [x for x in range(1,26+1)]
+
+>>> c=dict(zip(a,b))
+
+>>> print(c)
+{'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8, 'i': 9, 'j': 10, 'k': 11, 'l': 12, 'm': 13, 'n': 14, 'o': 15, 'p': 16, 'q': 17, 'r': 18, 's': 19, 't': 20, 'u': 21, 'v': 22, 'w': 23, 'x': 24, 'y': 25, 'z': 26}
+```
+
