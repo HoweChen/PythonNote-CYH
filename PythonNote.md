@@ -1502,3 +1502,13 @@ myfnc()
 
 
 global 作用于 global 的作用域，nonlocal 试用于非 global 的父级作用域
+
+# 如何去除 list 里多余的项目，最快的方法
+
+思路，转换成 dict 然后再转回 list
+```python
+def function(seq):
+    # Not order preserving
+    return {}.fromkeys(seq).keys()
+    # 这里用 keys() 是为了转换成以 key 为基础的视图，防止因为 list 太大而造成的内存浪费
+```
