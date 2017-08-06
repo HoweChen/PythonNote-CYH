@@ -1511,4 +1511,5 @@ def function(seq):
     # Not order preserving
     return {}.fromkeys(seq).keys()
     # 这里用 keys() 是为了转换成以 key 为基础的视图，防止因为 list 太大而造成的内存浪费
+    # fromkeys() 是以一个 sequence 来当做 key 生成 dict
 ```
