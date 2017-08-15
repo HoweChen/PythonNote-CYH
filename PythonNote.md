@@ -1513,3 +1513,49 @@ def function(seq):
     # 这里用 keys() 是为了转换成以 key 为基础的视图，防止因为 list 太大而造成的内存浪费
     # fromkeys() 是以一个 sequence 来当做 key 生成 dict
 ```
+
+#浅拷贝与深拷贝的区别：
+
+[原问题链接](https://stackoverflow.com/a/17246744/4382094)
+
+> The difference between shallow and deep copying is only relevant for compound objects (objects that contain other objects, like lists or class instances):
+>
+> - A shallow copy constructs a new compound object and then (to the extent possible) inserts references into it to the objects found in the original.
+> - A deep copy constructs a new compound object and then, recursively, inserts copies into it of the objects found in the original.
+
+Here's a little demonstration:
+
+```
+import copy
+
+a = [1, 2, 3]
+b = [4, 5, 6]
+c = [a, b]
+```
+
+Using normal assignment operatings to copy:
+
+```
+d = c
+
+print id(c) == id(d)          # True - d is the same object as c
+print id(c[0]) == id(d[0])    # True - d[0] is the same object as c[0]
+```
+
+Using a shallow copy:
+
+```
+d = copy.copy(c)
+
+print id(c) == id(d)          # False - d is now a new object
+print id(c[0]) == id(d[0])    # True - d[0] is the same object as c[0]
+```
+
+Using a deep copy:
+
+```
+d = copy.deepcopy(c)
+
+print id(c) == id(d)          # False - d is now a new object
+print id(c[0]) == id(d[0])    # False - d[0] is now a new object
+```
