@@ -1514,7 +1514,7 @@ def function(seq):
     # fromkeys() 是以一个 sequence 来当做 key 生成 dict
 ```
 
-#浅拷贝与深拷贝的区别：
+# 浅拷贝与深拷贝的区别：
 
 [原问题链接](https://stackoverflow.com/a/17246744/4382094)
 
@@ -1561,3 +1561,7 @@ print id(c[0]) == id(d[0])    # False - d[0] is now a new object
 ```
 
 总结下来，就是深拷贝就是对该元素的 **根** 进行拷贝
+
+# 理解 生成器 的结束部分
+
+要理解 generator 的工作原理，它是在`for`循环的过程中不断计算出下一个元素，并在适当的条件结束`for`循环。对于函数改成的 generator 来说，遇到`return`语句或者执行到函数体最后一行语句，就是结束 generator 的指令，`for`循环随之结束。
