@@ -1559,3 +1559,5 @@ d = copy.deepcopy(c)
 print id(c) == id(d)          # False - d is now a new object
 print id(c[0]) == id(d[0])    # False - d[0] is now a new object
 ```
+
+总结下来，就是深拷贝就是对该元素的 **根** 进行拷贝
