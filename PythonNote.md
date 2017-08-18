@@ -1624,3 +1624,23 @@ def fib(max):
 ```
 
 则函数会在到了给定的 `max` 之后结束
+
+
+# [[] and {} vs list() and dict(), which is better?](https://stackoverflow.com/a/5791030/4382094)
+
+
+
+```python
+In [1]: import dis
+In [2]: a = lambda: {}
+In [3]: b = lambda: dict()
+
+In [4]: dis.dis(a)
+  1           0 BUILD_MAP                0
+              3 RETURN_VALUE
+
+In [5]: dis.dis(b)
+  1           0 LOAD_GLOBAL              0 (dict)
+              3 CALL_FUNCTION            0
+              6 RETURN_VALUE
+```
