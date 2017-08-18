@@ -359,6 +359,36 @@ TypeError: descriptor 'lower' requires a 'str' object but received a 'tuple'
 >>> a, b, rest (0, 1, [])
 ```
 
+同样我们可以对 dict 进行拆包
+ 
+```python
+>>> x, y = {'a': 2, 'b': 5}
+>>> x
+'a'
+>>> y
+'b'
+
+
+>>> x, y = {'a': 2, 'b': 5}.keys()
+
+>>> x
+'a'
+
+>>> y
+'b'
+
+
+>>> x, y = {'a': 2, 'b': 5}.values()
+
+>>> x
+2
+
+>>> y
+5
+```
+
+对于 dict 的拆包，`默认是对 keys 进行拆包`，当然也可以加 `keys()` 或者 `values()` 进行`键`和`值`的拆包
+
 # list.append() 和 list.extend() 的区别 (tuple have no append and extend method)
 
 append 加入元素，extend 加入可迭代对象。
