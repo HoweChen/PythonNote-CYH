@@ -1847,7 +1847,7 @@ def flatten(a):
             yield from flatten(each)
 ```
 
-
+非字典的 iterable object
 ```python
 def flatten(a):
     for each in a:
