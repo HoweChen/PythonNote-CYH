@@ -1834,7 +1834,7 @@ type(Truck()) == Vehicle        # returns False
 
 `yield from` yields each item of the iterable, but `yield` yields the iterable itself.
 
-# 如何 flatten() 一个iterable object
+# 如何 flatten() 一个list
 
 一个生成器的版本： 
 
