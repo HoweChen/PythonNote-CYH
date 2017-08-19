@@ -1834,7 +1834,7 @@ type(Truck()) == Vehicle        # returns False
 
 `yield from` yields each item of the iterable, but `yield` yields the iterable itself.
 
-# 如何 flatten() 一个list
+# 如何 flatten() 一个 list 或者 iterable object
 
 一个生成器的版本： 
 
@@ -1842,6 +1842,16 @@ type(Truck()) == Vehicle        # returns False
 def flatten(a):
     for each in a:
         if not isinstance(each, list):
+            yield each
+        else:
+            yield from flatten(each)
+```
+
+
+```python
+def flatten(a):
+    for each in a:
+        if not isinstance(each, type(a)):
             yield each
         else:
             yield from flatten(each)
