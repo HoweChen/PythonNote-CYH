@@ -1815,3 +1815,21 @@ type(Vehicle()) == Vehicle      # returns True
 isinstance(Truck(), Vehicle)    # returns True
 type(Truck()) == Vehicle        # returns False
 ```
+
+# yield from 和 yield 的区别：
+
+```python
+>>> def g():
+...     yield from range(5)
+... 
+>>> list(g())
+[0, 1, 2, 3, 4]
+>>> def g():
+...     yield range(5)
+... 
+>>> list(g())
+[range(0, 5)]
+>>>
+```
+
+`yield from` yields each item of the iterable, but `yield` yields the iterable itself.
