@@ -1798,3 +1798,20 @@ But in your code it gets a generator, which is good because:
 2. You may have a lot of children and you don't want them all stored in memory.
 
 `And it works because Python does not care if the argument of a method is a list or not. Python expects iterables so it will work with strings, lists, tuples and generators! This is called duck typing and is one of the reason why Python is so cool.`
+
+# isinstance() 和 type() 的区别：
+
+isinstance() 支持类的继承，而 type() 不支持
+
+```python
+class Vehicle:
+    pass
+
+class Truck(Vehicle):
+    pass
+
+isinstance(Vehicle(), Vehicle)  # returns True
+type(Vehicle()) == Vehicle      # returns True
+isinstance(Truck(), Vehicle)    # returns True
+type(Truck()) == Vehicle        # returns False
+```
