@@ -1856,3 +1856,13 @@ def flatten(a):
         else:
             yield from flatten(each)
 ```
+
+# Python3 中声明类：对象和类的区别
+
+```python
+# new style
+class fuck(object):
+    pass
+
+```
+要用到关键词 object，证明类和对象的关系。
