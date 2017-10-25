@@ -1866,3 +1866,6 @@ class fuck(object):
 
 ```
 要用到关键词 object，证明类和对象的关系。
+
+# 不能用 list() 去操作一个 integer
+`list()` 这个方法是针对 `iterbale object`的
