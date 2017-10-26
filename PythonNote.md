@@ -1869,3 +1869,8 @@ class fuck(object):
 
 # 不能用 list() 去操作一个 integer
 `list()` 这个方法是针对 `iterbale object`的
+
+# swap list 里的元素
+list[a], list[b] = list[b],list[a]
+
+注意不能用值(e.g. value = list[a], 直接用 value 而不是 list[a])来进行交换，不然index会发生问题，导致交换失败
