@@ -12,6 +12,7 @@ def binary_search(created_list, target_number, left, right):
     elif target_number < mid:
         return binary_search(created_list, target_number, left, mid - 1)
     else:
+        # target number is found which is mid
         return mid
 
 
