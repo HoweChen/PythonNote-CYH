@@ -9,7 +9,7 @@ def binary_search(created_list, target_number, left, right):
     mid = int((left + right) / 2)
     if target_number > created_list[mid]:
         return binary_search(created_list, target_number, mid + 1, right)
-    elif target_number < mid:
+    elif target_number < created_list[mid]:
         return binary_search(created_list, target_number, left, mid - 1)
     else:
         # target number is found which is mid
