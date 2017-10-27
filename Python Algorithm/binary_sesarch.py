@@ -13,7 +13,6 @@ def binary_search(created_list, target_number, left, right):
         return binary_search(created_list, target_number, left, mid - 1)
     else:
         return mid
-    return mid
 
 
 def main():
