@@ -1874,3 +1874,36 @@ class fuck(object):
 list[a], list[b] = list[b],list[a]
 
 注意不能用值(e.g. value = list[a], 直接用 value 而不是 list[a])来进行交换，不然index会发生问题，导致交换失败
+
+# 如何把递归的里头的值 return 出来，解决递归 return 为 None 的问题
+
+以下是一个 `binary seach` 的程序：
+
+```python
+def binary_search(created_list, target_number, left, right):
+    mid = int((left + right) / 2)
+    if target_number > created_list[mid]:
+        binary_search(created_list, target_number, mid + 1, right)
+    elif target_number < mid:
+        binary_search(created_list, target_number, left, mid - 1)
+    else:
+        return mid
+```
+
+此时会返回 `none` 因为你在最底层的递归虽然返回了 `mid` 但是你上层的函数调用没有返回，所以应该改成：
+
+```python
+
+def binary_search(created_list, target_number, left, right):
+    mid = int((left + right) / 2)
+    if target_number > created_list[mid]:
+        return binary_search(created_list, target_number, mid + 1, right)
+    elif target_number < mid:
+        return binary_search(created_list, target_number, left, mid - 1)
+    else:
+        return mid
+```
+        
+保证每个递归都有返回值        
+
+        
