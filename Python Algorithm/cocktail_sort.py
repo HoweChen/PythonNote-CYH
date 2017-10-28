@@ -15,7 +15,7 @@ def bubble_sort(test_list):
             if test_list[i] < test_list[j]:
                 test_list[i], test_list[j] = test_list[j], test_list[i]
 
-        # 预先把后面的数组给排个序
+        # 预先把后面的数组给排个序，作为鸡尾酒的搅拌程序
         for j in range(list_length - 2, i, -1):
             if test_list[j] < test_list[j - 1]:
                 test_list[j], test_list[j - 1] = test_list[j - 1], test_list[j]
