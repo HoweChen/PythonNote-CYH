@@ -1,6 +1,4 @@
 import numpy as np
-import math
-
 
 # two methods: Euclidean Distance, Cosine Similarity and Manhattan Distance
 def create_random_matrix(size, feature_length, element_scale):
