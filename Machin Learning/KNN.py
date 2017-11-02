@@ -10,7 +10,7 @@ def create_random_matrix(size, feature_length, element_scale):
 
 def knn_euclidean_distance(zipped_data, distance=0):
     for j in zipped_data:
-        distance += (j[0] - j[1]) ** 2
+        distance += np.power((j[0] - j[1]), 2)
     distance = np.sqrt(distance)
     return distance
 
@@ -25,9 +25,9 @@ def knn_cosine_similarity(zipped_data, sub_data, testing_data, vector_product=0,
     for j in zipped_data:
         vector_product += j[0] * j[1]
 
-    for norm_data_loop in list(map(lambda x: x ** 2, sub_data)):
+    for norm_data_loop in list(map(lambda x: np.power(x, 2), sub_data)):
         norm_of_data += norm_data_loop
-    for norm_input_loop in list(map(lambda x: x ** 2, testing_data)):
+    for norm_input_loop in list(map(lambda x: np.power(x, 2), testing_data)):
         norm_of_input += norm_input_loop
 
     cosine_similarity = vector_product / (np.sqrt(norm_of_data) + np.sqrt(norm_of_input))
