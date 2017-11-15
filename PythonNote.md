@@ -1904,6 +1904,52 @@ def binary_search(created_list, target_number, left, right):
         return mid
 ```
         
-保证每个递归都有返回值        
+保证每个递归都有返回值
 
+
+#关于嵌套 dict 里元素的交换
+
+前提：在`dict`当中，如果我们赋值给一个不存在的`key`， 那么这个键值对会自动被创建
+
+```python
+In [9]: b
+Out[9]: {}
+
+
+In [10]: b['fuck']='you'
+
+
+In [11]: b
+Out[11]: {'fuck': 'you'}
+
+```
+        
+以下内容来自 《集体智慧编程》
+
+我们有一个dict：
+
+```python
+
+pref = {'Lisa Rose': {'Lady in the Water':3.5,'Snakes on a Plane':3.5},'
+   ...: Gene Seymour':{'Lady in the Water':2.5,'Snakes on a Plane':3.0}}
+```
+
+我们要把里头嵌套的内容交换以下，变成第一键为电影名称，嵌套的键为人物名称
+
+```python
+
+# python 实现代码
+
+prefs = {'Lisa Rose': {'Lady in the Water': 3.5, 'Snakes on a Plane': 3.5},
+         'Gene Seymour': {'Lady in the Water': 2.5, 'Snakes on a Plane': 3.0}}
+
+result = {}
+
+for person in prefs:
+    for item in prefs[person]:
+        result.setdefault(item, {})
+        result[item][person] = prefs[person][item]
+print(result)
+
+```
         
