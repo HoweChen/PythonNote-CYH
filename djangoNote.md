@@ -32,3 +32,9 @@ urlpatterns = [
 
 ]
 ```
+
+# 3. Django.db 外键
+
+2.0 需要声明 'on_delete'.
+
+具体其他参数地址可参考：<https://docs.djangoproject.com/en/1.11/ref/models/fields/#django.db.models.ForeignKey.on_delete>
