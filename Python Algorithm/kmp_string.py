@@ -60,7 +60,7 @@ def kmp(*args):
 
 
 if __name__ == '__main__':
-    # long_one = input('Original String: ')
-    # short_one = input('Target String: ')
-    # kmp(long_one, short_one)
-    print(kmp('BBC ABCDAB ABCDABCDABDE', 'ABCDABD'))
+    long_one = input('Original String(should longer than the target string): ')
+    short_one = input('Target String(should less than the original string): ')
+    print(kmp(long_one, short_one))
+    # print(kmp('BBC ABCDAB ABCDABCDABDE', 'ABCDABD'))
