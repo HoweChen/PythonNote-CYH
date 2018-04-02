@@ -1,6 +1,8 @@
 import numpy as np
 
 # two methods: Euclidean Distance, Cosine Similarity and Manhattan Distance
+
+
 def create_random_matrix(size, feature_length, element_scale):
     matrix = np.random.randint(element_scale, size=(size, feature_length))
     return matrix
@@ -28,7 +30,8 @@ def knn_cosine_similarity(zipped_data, sub_data, testing_data, vector_product=0,
     for norm_input_loop in list(map(lambda x: np.power(x, 2), testing_data)):
         norm_of_input += norm_input_loop
 
-    cosine_similarity = vector_product / (np.sqrt(norm_of_data) + np.sqrt(norm_of_input))
+    cosine_similarity = vector_product / \
+        (np.sqrt(norm_of_data) + np.sqrt(norm_of_input))
     return cosine_similarity
 
 
@@ -61,15 +64,18 @@ def knn_algorithm(data, testing, k):
     # get index through the sorted result
     # Euclidean Distance
     for i in sorted(output_dict_euclidean_distance.keys())[0:k]:
-        output_index_euclidean_distance.append(output_dict_euclidean_distance.get(i))
+        output_index_euclidean_distance.append(
+            output_dict_euclidean_distance.get(i))
     output_result['Euclidean Distance'] = output_index_euclidean_distance
     # Manhattan Distance
     for i in sorted(output_dict_manhattan_distance.keys())[0:k]:
-        output_index_manhattan_distance.append(output_dict_manhattan_distance.get(i))
+        output_index_manhattan_distance.append(
+            output_dict_manhattan_distance.get(i))
     output_result['Manhattan Distance'] = output_index_manhattan_distance
     # Cosine Similarity
     for i in sorted(output_dict_cosine_similarity.keys())[0:k]:
-        output_index_cosine_similarity.append(output_dict_cosine_similarity.get(i))
+        output_index_cosine_similarity.append(
+            output_dict_cosine_similarity.get(i))
     output_result['Cosine Similarity'] = output_index_cosine_similarity
 
     return output_result
@@ -77,7 +83,8 @@ def knn_algorithm(data, testing, k):
 
 def main():
     size = int(input('How many cases do you want?\n'))
-    feature_length = int(input('What is the length of features do you want?\n'))
+    feature_length = int(
+        input('What is the length of features do you want?\n'))
     element_scale = int(input('Please input the scale of element\n'))
     top_k = int(input('Please define the number of top-k\n'))
     matrix_data = create_random_matrix(size, feature_length, element_scale)
