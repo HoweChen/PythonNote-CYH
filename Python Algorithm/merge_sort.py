@@ -34,11 +34,12 @@ def merge(left, right):
 def main():
     rand_num_list = create_random_number_list.main()
     # rand_num_list = list(range(0, 10))
-    # random.shuffle(rand_num_list)
+    random.shuffle(rand_num_list)
+    backup = rand_num_list.copy()
     print('Before: {0}'.format(rand_num_list))
     result = merge_sort(rand_num_list)
     print('After: {0}'.format(result))
-    print(sorted(rand_num_list) == result)
+    print(sorted(backup) == result)
 
 
 if __name__ == '__main__':
