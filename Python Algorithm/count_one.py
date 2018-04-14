@@ -1,3 +1,9 @@
+"""
+Use bit shifting operation to count how many ones for a num in binary form
+The input is the integer number
+"""
+
+
 def main():
     num = int(input('Please input an integer: '))
     count = 0
