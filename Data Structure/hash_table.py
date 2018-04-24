@@ -1,3 +1,10 @@
+# TODO: code the basic hash algorithm
+# TODO: finish the linked_list push method
+# TODO: finish other basic colision method
+
+import copy
+
+
 class HashTable(object):
     def __init__(self, *args, **kwargs):
         length = kwargs.get('length')
