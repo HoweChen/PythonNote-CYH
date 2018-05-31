@@ -50,24 +50,21 @@ print(a)
 6
 
 [1, 2, 4, 5, 6]
-
 ```
-
-
 
 正确的处理方法是用 while 循环，其写法是符合满足条件的进行处理，否则+1，这样的话 itr 在遇到情况处理后还停留在原地
 
-#  Set 保留 list 的顺序
+# Set 保留 list 的顺序
 
-#  sort() 和 sorted() 的区别
+# sort() 和 sorted() 的区别
 
-1. `sorted()` returns a **new** sorted list, leaving the original list unaffected. `list.sort()` sorts the list **in-place**, mutating the list indices, and returns `None` (like all in-place operations).
-2. `sorted()` works on any iterable, not just lists. Strings, tuples, dictionaries (you'll get the keys), generators, etc., returning a list containing all elements, sorted.
-3. - Use `list.sort()` when you want to mutate the list, `sorted()` when you want a new sorted object back. Use `sorted()` when you want to sort something that is an iterable, not a list *yet*.
-   - For lists, `list.sort()` is faster than `sorted()` because it doesn't have to create a copy. For any other iterable, you have no choice.
-   - No, you cannot retrieve the original positions. Once you called `list.sort()` the original order is gone.
+1.  `sorted()` returns a **new** sorted list, leaving the original list unaffected. `list.sort()` sorts the list **in-place**, mutating the list indices, and returns `None` (like all in-place operations).
+2.  `sorted()` works on any iterable, not just lists. Strings, tuples, dictionaries (you'll get the keys), generators, etc., returning a list containing all elements, sorted.
+3.  * Use `list.sort()` when you want to mutate the list, `sorted()` when you want a new sorted object back. Use `sorted()` when you want to sort something that is an iterable, not a list _yet_.
+    * For lists, `list.sort()` is faster than `sorted()` because it doesn't have to create a copy. For any other iterable, you have no choice.
+    * No, you cannot retrieve the original positions. Once you called `list.sort()` the original order is gone.
 
-#  默认参数注意事项
+# 默认参数注意事项
 
 ```python
 An example:
@@ -109,10 +106,7 @@ An example:
 
 
 [1, 1, 1]
-
 ```
-
-
 
 As you can see, the list keeps getting longer and longer. If you look at the list identity, you’ll see that the function keeps returning the same object:
 
@@ -138,26 +132,23 @@ As you can see, the list keeps getting longer and longer. If you look at the lis
 
 
 12516768
-
 ```
-
-
 
 The reason is simple: the function keeps using the same object, in each call. The modifications we make are “sticky”.
 
-Python函数在定义的时候，默认参数L的值就被计算出来了，即[]，因为默认参数L也是一个变量，它指向对象[]，每次调用该函数，如果改变了L的内容，则下次调用时，默认参数的内容就变了，不再是函数定义时的[]了。
+Python 函数在定义的时候，默认参数 L 的值就被计算出来了，即[]，因为默认参数 L 也是一个变量，它指向对象[]，每次调用该函数，如果改变了 L 的内容，则下次调用时，默认参数的内容就变了，不再是函数定义时的[]了。
 
 所以，定义默认参数要牢记一点：默认参数必须指向不变对象
 
-​    
+​
 
-#  生成器的用法，以及() 和 [] 在生成器当中的区别 (内容来自廖雪峰博客)
+# 生成器的用法，以及() 和 [] 在生成器当中的区别 (内容来自廖雪峰博客)
 
-通过列表生成式，我们可以直接创建一个列表。但是，受到内存限制，列表容量肯定是有限的。而且，创建一个包含100万个元素的列表，不仅占用很大的存储空间，如果我们仅仅需要访问前面几个元素，那后面绝大多数元素占用的空间都白白浪费了。
+通过列表生成式，我们可以直接创建一个列表。但是，受到内存限制，列表容量肯定是有限的。而且，创建一个包含 100 万个元素的列表，不仅占用很大的存储空间，如果我们仅仅需要访问前面几个元素，那后面绝大多数元素占用的空间都白白浪费了。
 
-所以，如果列表元素可以按照某种算法推算出来，那我们是否可以在循环的过程中不断推算出后续的元素呢？这样就不必创建完整的list，从而节省大量的空间。在Python中，这种一边循环一边计算的机制，称为生成器（Generator）。
+所以，如果列表元素可以按照某种算法推算出来，那我们是否可以在循环的过程中不断推算出后续的元素呢？这样就不必创建完整的 list，从而节省大量的空间。在 Python 中，这种一边循环一边计算的机制，称为生成器（Generator）。
 
-要创建一个generator，有很多种方法。第一种方法很简单，只要把一个列表生成式的`[]`改成`()`，就创建了一个generator：
+要创建一个 generator，有很多种方法。第一种方法很简单，只要把一个列表生成式的`[]`改成`()`，就创建了一个 generator：
 
 ```python
 >>> L = [x * x for x in range(10)]
@@ -168,11 +159,11 @@ Python函数在定义的时候，默认参数L的值就被计算出来了，即[
 <generator object <genexpr> at 0x104feab40>
 ```
 
-创建`L`和`g`的区别仅在于最外层的`[]`和`()`，`L`是一个list，而`g`是一个generator。
+创建`L`和`g`的区别仅在于最外层的`[]`和`()`，`L`是一个 list，而`g`是一个 generator。
 
-我们可以直接打印出list的每一个元素，但我们怎么打印出generator的每一个元素呢？
+我们可以直接打印出 list 的每一个元素，但我们怎么打印出 generator 的每一个元素呢？
 
-如果要一个一个打印出来，可以通过generator的`next()`方法：
+如果要一个一个打印出来，可以通过 generator 的`next()`方法：
 
 ```python
 >>> g.next()
@@ -201,9 +192,9 @@ Traceback (most recent call last):
 StopIteration
 ```
 
-我们讲过，generator保存的是算法，每次调用`next()`，就计算出下一个元素的值，直到计算到最后一个元素，没有更多的元素时，抛出StopIteration的错误。
+我们讲过，generator 保存的是算法，每次调用`next()`，就计算出下一个元素的值，直到计算到最后一个元素，没有更多的元素时，抛出 StopIteration 的错误。
 
-当然，上面这种不断调用`next()`方法实在是太变态了，正确的方法是使用`for`循环，因为generator也是可迭代对象：
+当然，上面这种不断调用`next()`方法实在是太变态了，正确的方法是使用`for`循环，因为 generator 也是可迭代对象：
 
 ```python
 >>> g = (x * x for x in range(10))
@@ -222,14 +213,13 @@ StopIteration
 81
 ```
 
-所以，我们创建了一个generator后，基本上永远不会调用`next()`方法，而是通过`for`循环来迭代它。
+所以，我们创建了一个 generator 后，基本上永远不会调用`next()`方法，而是通过`for`循环来迭代它。
 
-generator非常强大。如果推算的算法比较复杂，用类似列表生成式的`for`循环无法实现的时候，还可以用函数来实现。
-
+generator 非常强大。如果推算的算法比较复杂，用类似列表生成式的`for`循环无法实现的时候，还可以用函数来实现。
 
 # 对 tuple list 进行的排序
 
-我的同事Axel Hecht 给我展示了一些我所不知道的关于python排序的东西。 在python里你可以对一个元组进行排序。例子是最好的说明：
+我的同事 Axel Hecht 给我展示了一些我所不知道的关于 python 排序的东西。 在 python 里你可以对一个元组进行排序。例子是最好的说明：
 
 ```python
 >>> items = [(1, 'B'), (1, 'A'), (2, 'A'), (0, 'B'), (0, 'a')]
@@ -237,7 +227,8 @@ generator非常强大。如果推算的算法比较复杂，用类似列表生�
 [(0, 'B'), (0, 'a'), (1, 'A'), (1, 'B'), (2, 'A')]
 ```
 
-默认情况下内置的sort和sorted函数接收的参数是元组时，他将会先按元组的第一个元素进行排序再按第二个元素进行排序。 然而，注意到结果中(0, 'B’)在(0, 'a')的前面。这是因为大写字母B的ASCII编码比a小。然而，假设你想要一些更人性的排序并且不关注大小写。你或许会这么做：
+默认情况下内置的 sort 和 sorted 函数接收的参数是元组时，他将会先按元组的第一个元素进行排序再按第二个元素进行排序。 然而，注意到结果中(0, 'B’)在(0, 'a')的前面。这是因为大写字母 B 的 ASCII 编码比 a 小。然而，假设你想要一些更人性的排序并且不关注大小写。你或许会这么做：
+
 ```python
 >>> sorted(items, key=str.lower)
 Traceback (most recent call last):
@@ -245,11 +236,11 @@ File "<stdin>", line 1, in <module>
 TypeError: descriptor 'lower' requires a 'str' object but received a 'tuple'
 ```
 
-我们将会得到一个错误，因为他不能正确处理元组的第一部分。（注：原文作者估计想说元组中第一项是数字，不能使用lower这个方法；正确的原因提示的很明显了，是因为你传递的是一个元组，而元组是没有lower这个方法的）
+我们将会得到一个错误，因为他不能正确处理元组的第一部分。（注：原文作者估计想说元组中第一项是数字，不能使用 lower 这个方法；正确的原因提示的很明显了，是因为你传递的是一个元组，而元组是没有 lower 这个方法的）
 
-我们可以试着写一个lambda函数(eg.sorted(items, key=lambda x: x.lower() if isinstance(x, str) else x)),他将不会工作因为你只处理了元组的一个元素。（注：同上面，作者这么做必然是错的，思考给这个lambda传一个元组,返回的是什么？）
+我们可以试着写一个 lambda 函数(eg.sorted(items, key=lambda x: x.lower() if isinstance(x, str) else x)),他将不会工作因为你只处理了元组的一个元素。（注：同上面，作者这么做必然是错的，思考给这个 lambda 传一个元组,返回的是什么？）
 
-言归正传，下面就是你应该怎么做的方法。一个lambda，它会返回一个元组:
+言归正传，下面就是你应该怎么做的方法。一个 lambda，它会返回一个元组:
 
 ```python
 >>> sorted(items, key=lambda x: (x[0], x[1].lower()))
@@ -258,28 +249,26 @@ TypeError: descriptor 'lower' requires a 'str' object but received a 'tuple'
 
 如果是 sorted(items, key=lambda x: (x[1].lower())) 那么结果就是针对每一个 iterator 也就是每一个 tuple 里的第二个元素进行排序，那么原文里头的呢，是先对第一个元素进行排序，然后再对第二个元素进行排序。
 
-
-
-现在你完成了它！谢谢Axel的分享！
+现在你完成了它！谢谢 Axel 的分享！
 
 作为你还在读本博文的奖励...
 
-我确信你知道你可以倒序排列，仅仅使用sorted(items, reverse=True, …)，但是你怎么根据关键字来进行不同的排序？
+我确信你知道你可以倒序排列，仅仅使用 sorted(items, reverse=True, …)，但是你怎么根据关键字来进行不同的排序？
 
-使用lambda函数返回元组的技巧，下面是一个我们排序一个稍微高级的数据结构:
+使用 lambda 函数返回元组的技巧，下面是一个我们排序一个稍微高级的数据结构:
 
 ```python
 >>> peeps = [{'name': 'Bill', 'salary': 1000}, {'name': 'Bill', 'salary': 500}, {'name': 'Ted', 'salary': 500}]
 ```
 
-现在，使用lambda函数返回一个元组的特性来排序:
+现在，使用 lambda 函数返回一个元组的特性来排序:
 
 ```python
 >>> sorted(peeps, key=lambda x: (x['name'], x['salary']))
 [{'salary': 500, 'name': 'Bill'}, {'salary': 1000, 'name': 'Bill'}, {'salary': 500, 'name': 'Ted'}]
 ```
 
-很有意思，对吧？Bill 在Ted的前面，并且500在1000的前面。但是如何在相同的 name 下，对 salary 反向排序？很简单，对它取反:
+很有意思，对吧？Bill 在 Ted 的前面，并且 500 在 1000 的前面。但是如何在相同的 name 下，对 salary 反向排序？很简单，对它取反:
 
 ```python
 >>> sorted(peeps, key=lambda x: (x['name'], -x['salary']))
@@ -288,12 +277,9 @@ TypeError: descriptor 'lower' requires a 'str' object but received a 'tuple'
 
 原文地址：http://www.peterbe.com/plog/in-python-you-sort-with-a-tuple
 
-
 # 元组拆包，或者称之为可迭代对象拆包 (来自[流畅的 Python](http://www.ituring.com.cn/book/1564))
 
 [拓展阅读](https://www.python.org/dev/peps/pep-3132/)
-
-
 
 ```python
 >>> lax_coordinates = (33.9425, -118.408056)
@@ -313,7 +299,7 @@ TypeError: descriptor 'lower' requires a 'str' object but received a 'tuple'
 >>> b, a = a, b
 ```
 
-还可以用 * 运算符把一个可迭代对象拆开作为函数的参数：
+还可以用 \* 运算符把一个可迭代对象拆开作为函数的参数：
 
 ```python
 >>> divmod(20, 8) (2, 4)
@@ -337,14 +323,12 @@ TypeError: descriptor 'lower' requires a 'str' object but received a 'tuple'
 >>> filename 'idrsa.pub'
 ```
 
-在进行拆包的时候，我们不总是对元组里所有的数据都感兴趣， _ 占位符能帮助处理这种 情况，上面这段代码也展示了它的用法。
-
-
+在进行拆包的时候，我们不总是对元组里所有的数据都感兴趣， \_ 占位符能帮助处理这种 情况，上面这段代码也展示了它的用法。
 
 ```
 在Python 中，函数用 *args 来获取不确定数量的参数算是一种经典写法了。 于是 Python 3 里，这个概念被扩展到了平行赋值中：
-
 ```
+
 ```python
 >>> a, b, *rest = range(5)
 
@@ -360,7 +344,7 @@ TypeError: descriptor 'lower' requires a 'str' object but received a 'tuple'
 ```
 
 同样我们可以对 dict 进行拆包
- 
+
 ```python
 >>> x, y = {'a': 2, 'b': 5}
 >>> x
@@ -393,7 +377,6 @@ TypeError: descriptor 'lower' requires a 'str' object but received a 'tuple'
 
 append 加入元素，extend 加入可迭代对象。
 
-
 # Python 装饰器 ([原文来自 stack overflow](https://stackoverflow.com/a/1594484))
 
 ## Decorator Basics
@@ -409,7 +392,7 @@ def shout(word="yes"):
 print(shout())
 # outputs : 'Yes!'
 
-# As an object, you can assign the function to a variable like any other object 
+# As an object, you can assign the function to a variable like any other object
 scream = shout
 
 # Notice we don't use parentheses: we are not calling the function,
@@ -433,7 +416,7 @@ print(scream())
 # outputs: 'Yes!'
 ```
 
-Keep this in mind. We’ll circle back to it shortly. 
+Keep this in mind. We’ll circle back to it shortly.
 
 Another interesting property of Python functions is they can be defined inside another function!
 
@@ -448,9 +431,9 @@ def talk():
     print(whisper())
 
 # You call "talk", that defines "whisper" EVERY TIME you call it, then
-# "whisper" is called in "talk". 
+# "whisper" is called in "talk".
 talk()
-# outputs: 
+# outputs:
 # "yes..."
 
 # But "whisper" DOES NOT EXIST outside "talk":
@@ -469,8 +452,8 @@ Okay, still here? Now the fun part...
 
 You’ve seen that functions are objects. Therefore, functions:
 
-- can be assigned to a variable
-- can be defined in another function
+* can be assigned to a variable
+* can be defined in another function
 
 That means that **a function can return another function**.
 
@@ -495,7 +478,7 @@ def getTalk(kind="shout"):
 # How do you use this strange beast?
 
 # Get the function and assign it to a variable
-talk = getTalk()      
+talk = getTalk()
 
 # You can see that "talk" is here a function object:
 print(talk)
@@ -510,17 +493,17 @@ print(getTalk("whisper")())
 #outputs : yes...
 ```
 
-There’s more! 
+There’s more!
 
 If you can `return` a function, you can pass one as a parameter:
 
 ```python
-def doSomethingBefore(func): 
+def doSomethingBefore(func):
     print("I do something before then I call the function you gave me")
     print(func())
 
 doSomethingBefore(scream)
-#outputs: 
+#outputs:
 #I do something before then I call the function you gave me
 #Yes!
 ```
@@ -558,11 +541,11 @@ def my_shiny_new_decorator(a_function_to_decorate):
 def a_stand_alone_function():
     print("I am a stand alone function, don't you dare modify me")
 
-a_stand_alone_function() 
+a_stand_alone_function()
 #outputs: I am a stand alone function, don't you dare modify me
 
 # Well, you can decorate it to extend its behavior.
-# Just pass it to the decorator, it will wrap it dynamically in 
+# Just pass it to the decorator, it will wrap it dynamically in
 # any code you want and return you a new function ready to be used:
 
 a_stand_alone_function_decorated = my_shiny_new_decorator(a_stand_alone_function)
@@ -705,7 +688,7 @@ def say():
 print(say())
 #outputs: <b><i>hello</i></b>
 
-# This is the exact equivalent to 
+# This is the exact equivalent to
 def say():
     return "hello"
 say = makebold(makeitalic(say))
@@ -716,14 +699,14 @@ print(say())
 
 You can now just leave happy, or burn your brain a little bit more and see advanced uses of decorators.
 
-------
+---
 
 ## Taking decorators to the next level
 
 ### Passing arguments to the decorated function
 
 ```python
-# It’s not black magic, you just have to let the wrapper 
+# It’s not black magic, you just have to let the wrapper
 # pass the argument:
 
 def a_decorator_passing_arguments(function_to_decorate):
@@ -733,7 +716,7 @@ def a_decorator_passing_arguments(function_to_decorate):
     return a_wrapper_accepting_arguments
 
 # Since when you are calling the function returned by the decorator, you are
-# calling the wrapper, passing arguments to the wrapper will let it pass them to 
+# calling the wrapper, passing arguments to the wrapper will let it pass them to
 # the decorated function
 
 @a_decorator_passing_arguments
@@ -748,7 +731,7 @@ print_full_name("Peter", "Venkman")
 
 ### Decorating methods
 
-One nifty thing about Python is that methods and functions are really the same. The only difference is that methods expect that their first argument is a reference to the current object (`self`). 
+One nifty thing about Python is that methods and functions are really the same. The only difference is that methods expect that their first argument is a reference to the current object (`self`).
 
 That means you can build a decorator for methods the same way! Just remember to take `self`into consideration:
 
@@ -809,7 +792,7 @@ function_with_arguments(1,2,3)
 #Do I have args?:
 #(1, 2, 3)
 #{}
-#1 2 3 
+#1 2 3
 
 @a_decorator_passing_arbitrary_arguments
 def function_with_named_arguments(a, b, c, platypus="Why not ?"):
@@ -842,11 +825,11 @@ m.sayYourAge()
 
 ### Passing arguments to the decorator
 
-Great, now what would you say about passing arguments to the decorator itself? 
+Great, now what would you say about passing arguments to the decorator itself?
 
 This can get somewhat twisted, since a decorator must accept a function as an argument. Therefore, you cannot pass the decorated function’s arguments directly to the decorator.
 
-Before rushing to the solution, let’s write a little reminder: 
+Before rushing to the solution, let’s write a little reminder:
 
 ```python
 # Decorators are ORDINARY functions
@@ -875,9 +858,9 @@ def lazy_function():
 #outputs: I am an ordinary function
 ```
 
-It’s exactly the same. "`my_decorator`" is called. So when you `@my_decorator`, you are telling Python to call the function 'labelled by the variable "`my_decorator`"'. 
+It’s exactly the same. "`my_decorator`" is called. So when you `@my_decorator`, you are telling Python to call the function 'labelled by the variable "`my_decorator`"'.
 
-This is important! The label you give can point directly to the decorator—**or not**. 
+This is important! The label you give can point directly to the decorator—**or not**.
 
 Let’s get evil. ☺
 
@@ -905,7 +888,7 @@ def decorator_maker():
     return my_decorator
 
 # Let’s create a decorator. It’s just a new function after all.
-new_decorator = decorator_maker()       
+new_decorator = decorator_maker()
 #outputs:
 #I make decorators! I am executed only once: when you make me create a decorator.
 #As a decorator maker, I return a decorator
@@ -928,7 +911,7 @@ decorated_function()
 #I am the decorated function.
 ```
 
-No surprise here. 
+No surprise here.
 
 Let’s do EXACTLY the same thing, but skip all the pesky intermediate variables:
 
@@ -943,14 +926,14 @@ decorated_function = decorator_maker()(decorated_function)
 #As the decorator, I return the wrapped function.
 
 # Finally:
-decorated_function()    
+decorated_function()
 #outputs:
 #I am the wrapper around the decorated function. I am called when you call the decorated function.
 #As the wrapper, I return the RESULT of the decorated function.
 #I am the decorated function.
 ```
 
-Let’s make it *even shorter*:
+Let’s make it _even shorter_:
 
 ```python
 @decorator_maker()
@@ -962,8 +945,8 @@ def decorated_function():
 #I am a decorator! I am executed only when you decorate a function.
 #As the decorator, I return the wrapped function.
 
-#Eventually: 
-decorated_function()    
+#Eventually:
+decorated_function()
 #outputs:
 #I am the wrapper around the decorated function. I am called when you call the decorated function.
 #As the wrapper, I return the RESULT of the decorated function.
@@ -1009,10 +992,10 @@ decorated_function_with_arguments("Rajesh", "Howard")
 #outputs:
 #I make decorators! And I accept arguments: Leonard Sheldon
 #I am the decorator. Somehow you passed me arguments: Leonard Sheldon
-#I am the wrapper around the decorated function. 
-#I can access all the variables 
-#   - from the decorator: Leonard Sheldon 
-#   - from the function call: Rajesh Howard 
+#I am the wrapper around the decorated function.
+#I can access all the variables
+#   - from the decorator: Leonard Sheldon
+#   - from the function call: Rajesh Howard
 #Then I can pass them to the decorated function
 #I am the decorated function and only knows about my arguments: Rajesh Howard
 ```
@@ -1032,21 +1015,21 @@ decorated_function_with_arguments(c2, "Howard")
 #outputs:
 #I make decorators! And I accept arguments: Leonard Penny
 #I am the decorator. Somehow you passed me arguments: Leonard Penny
-#I am the wrapper around the decorated function. 
-#I can access all the variables 
-#   - from the decorator: Leonard Penny 
-#   - from the function call: Leslie Howard 
+#I am the wrapper around the decorated function.
+#I can access all the variables
+#   - from the decorator: Leonard Penny
+#   - from the function call: Leslie Howard
 #Then I can pass them to the decorated function
 #I am the decorated function and only knows about my arguments: Leslie Howard
 ```
 
 As you can see, you can pass arguments to the decorator like any function using this trick. You can even use `*args, **kwargs` if you wish. But remember decorators are called **only once**. Just when Python imports the script. You can't dynamically set the arguments afterwards. When you do "import x", **the function is already decorated**, so you can't change anything.
 
-------
+---
 
 ## Let’s practice: decorating a decorator
 
-Okay, as a bonus, I'll give you a snippet to make any decorator accept generically any argument. After all, in order to accept arguments, we created our decorator using another function. 
+Okay, as a bonus, I'll give you a snippet to make any decorator accept generically any argument. After all, in order to accept arguments, we created our decorator using another function.
 
 We wrapped the decorator.
 
@@ -1058,7 +1041,7 @@ Let’s have some fun and write a decorator for the decorators:
 
 ```python
 def decorator_with_args(decorator_to_enhance):
-    """ 
+    """
     This function is supposed to be used as a decorator.
     It must decorate an other function, that is intended to be used as a decorator.
     Take a cup of coffee.
@@ -1073,7 +1056,7 @@ def decorator_with_args(decorator_to_enhance):
         # but keeps the passed arguments from the maker.
         def decorator_wrapper(func):
 
-            # We return the result of the original decorator, which, after all, 
+            # We return the result of the original decorator, which, after all,
             # IS JUST AN ORDINARY FUNCTION (which returns a function).
             # Only pitfall: the decorator must have this specific signature or it won't work:
             return decorator_to_enhance(func, *args, **kwargs)
@@ -1088,8 +1071,8 @@ It can be used as follows:
 ```python
 # You create the function you will use as a decorator. And stick a decorator on it :-)
 # Don't forget, the signature is "decorator(func, *args, **kwargs)"
-@decorator_with_args 
-def decorated_decorator(func, *args, **kwargs): 
+@decorator_with_args
+def decorated_decorator(func, *args, **kwargs):
     def wrapper(function_arg1, function_arg2):
         print("Decorated with {0} {1}".format(args, kwargs))
         return func(function_arg1, function_arg2)
@@ -1111,16 +1094,16 @@ decorated_function("Universe and", "everything")
 
 I know, the last time you had this feeling, it was after listening a guy saying: "before understanding recursion, you must first understand recursion". But now, don't you feel good about mastering this?
 
-------
+---
 
 ## Best practices: decorators
 
-- Decorators were introduced in Python 2.4, so be sure your code will be run on >= 2.4. 
-- Decorators slow down the function call. Keep that in mind.
-- **You cannot un-decorate a function.** (There *are* hacks to create decorators that can be removed, but nobody uses them.) So once a function is decorated, it’s decorated *for all the code*.
-- Decorators wrap functions, which can make them hard to debug. (This gets better from Python >= 2.5; see below.)
+* Decorators were introduced in Python 2.4, so be sure your code will be run on >= 2.4.
+* Decorators slow down the function call. Keep that in mind.
+* **You cannot un-decorate a function.** (There _are_ hacks to create decorators that can be removed, but nobody uses them.) So once a function is decorated, it’s decorated _for all the code_.
+* Decorators wrap functions, which can make them hard to debug. (This gets better from Python >= 2.5; see below.)
 
-The `functools` module was introduced in Python 2.5. It includes the function `functools.wraps()`, which copies the name, module, and docstring of the decorated function to its wrapper. 
+The `functools` module was introduced in Python 2.5. It includes the function `functools.wraps()`, which copies the name, module, and docstring of the decorated function to its wrapper.
 
 (Fun fact: `functools.wraps()` is a decorator! ☺)
 
@@ -1132,7 +1115,7 @@ def foo():
 print(foo.__name__)
 #outputs: foo
 
-# With a decorator, it gets messy    
+# With a decorator, it gets messy
 def bar(func):
     def wrapper():
         print("bar")
@@ -1167,13 +1150,13 @@ print(foo.__name__)
 #outputs: foo
 ```
 
-------
+---
 
 ## How can the decorators be useful?
 
-**Now the big question:** What can I use decorators for? 
+**Now the big question:** What can I use decorators for?
 
-Seem cool and powerful, but a practical example would be great. Well, there are 1000 possibilities. Classic uses are extending a function behavior from an external lib (you can't modify it), or for debugging (you don't want to modify it because it’s temporary). 
+Seem cool and powerful, but a practical example would be great. Well, there are 1000 possibilities. Classic uses are extending a function behavior from an external lib (you can't modify it), or for debugging (you don't want to modify it because it’s temporary).
 
 You can use them to extend several functions in a DRY’s way, like so:
 
@@ -1228,7 +1211,7 @@ print(reverse_string("A man, a plan, a canoe, pasta, heros, rajahs, a coloratura
 #outputs:
 #reverse_string ('Able was I ere I saw Elba',) {}
 #wrapper 0.0
-#wrapper has been used: 1x 
+#wrapper has been used: 1x
 #ablE was I ere I saw elbA
 #reverse_string ('A man, a plan, a canoe, pasta, heros, rajahs, a coloratura, maps, snipe, percale, macaroni, a gag, a banana bag, a tan, a tag, a banana bag again (or a camel), a crepe, pins, Spam, a rut, a Rolo, cash, a jar, sore hats, a peon, a canal: Panama!',) {}
 #wrapper 0.0
@@ -1266,29 +1249,26 @@ print(get_random_futurama_quote())
 #Curse you, merciful Poseidon!
 ```
 
-Python itself provides several decorators: `property`, `staticmethod`, etc. 
+Python itself provides several decorators: `property`, `staticmethod`, etc.
 
-- Django uses decorators to manage caching and view permissions. 
-- Twisted to fake inlining asynchronous functions calls.
+* Django uses decorators to manage caching and view permissions.
+* Twisted to fake inlining asynchronous functions calls.
 
 This really is a large playground.
 
 # 关于 Dictionary 的 View Object:
 
-在 Python 3 中的字典 Dictionary 中，有 ```dict.keys() ```，```dict.values()```和 ```dict.items()```，使用它们返回的都将是被称作是  ```View objects``` 的对象。
-
-
+在 Python 3 中的字典 Dictionary 中，有 `dict.keys()`，`dict.values()`和 `dict.items()`，使用它们返回的都将是被称作是 `View objects` 的对象。
 
 在 python 3 的文档中：
 
-> The objects returned by [`dict.keys()`](https://docs.python.org/3.3/library/stdtypes.html#dict.keys), [`dict.values()`](https://docs.python.org/3.3/library/stdtypes.html#dict.values) and [`dict.items()`](https://docs.python.org/3.3/library/stdtypes.html#dict.items) are *view objects*. They provide a dynamic view on the dictionary’s entries, which means that when the dictionary changes, the view reflects these changes.
+> The objects returned by [`dict.keys()`](https://docs.python.org/3.3/library/stdtypes.html#dict.keys), [`dict.values()`](https://docs.python.org/3.3/library/stdtypes.html#dict.values) and [`dict.items()`](https://docs.python.org/3.3/library/stdtypes.html#dict.items) are _view objects_. They provide a dynamic view on the dictionary’s entries, which means that when the dictionary changes, the view reflects these changes.
 >
 > Dictionary views can be iterated over to yield their respective data, and support membership tests:
 >
-> - `len(dictview)`
+> * `len(dictview)`
 >
 >   Return the number of entries in the dictionary.
->
 >
 > - `iter(dictview)`
 >
@@ -1296,23 +1276,19 @@ This really is a large playground.
 
 接下来我们可以做个试验：
 
-
-
 ```python
 x = {'a':1,'b':2}
 In [2]: x.items()
 Out[2]: dict_items([('a', 1), ('b', 2)])
-    
+
 In [3]: x.values()
 Out[3]: dict_values([1, 2])
-    
+
 In [4]: x.keys()
 Out[4]: dict_keys(['a', 'b'])
 ```
 
 我们可以看到整个 dict 中 keys，values 和 items 的视图。
-
-
 
 ```python
 In [8]: len(x.keys())
@@ -1329,8 +1305,6 @@ Out[10]: 2
 
 我们可以获得这个 object 的一些属性。
 
-
-
 接下来，我们这样做：
 
 ```python
@@ -1338,11 +1312,7 @@ In [11]: iter(x.items())
 Out[11]: <dict_itemiterator at 0x1103661d8>
 ```
 
-
-
-我们就将这个 view object 转化成了一个iterator
-
-
+我们就将这个 view object 转化成了一个 iterator
 
 如果我们想输出这个 iterator 的值，就用 next(itr)
 
@@ -1353,31 +1323,23 @@ Out[12]: ('a', 1)
 
 返回的就是一个 tuple。
 
-
-
 还有一个函数，叫做 `iteritems()`，这个函数在 Python3 中已经被弃用了，现在的 `items()`函数实现的就是`iteritems()`的功能，这里就不再赘述。
 
-
-
-# 关于generator, iterator 以及 range() 的一些问题
+# 关于 generator, iterator 以及 range() 的一些问题
 
 `a = range(100)`是一个 iterator 吗？
 
 不是。
 
-是一个 generator 吗？ 
+是一个 generator 吗？
 
 也不是。
 
 实时上 `generator`是`iterator`的一个特殊情况。
 
-
-
 `range()`实际上是一个 class，这个通过这个 class 创造出来得实例（例如`range(100)`）是不可变的但是可迭代的对象 Object：immutable iterable objects.
 
 所以 range() 创造出来得只是一个对象。
-
-
 
 这个问题来自于https://stackoverflow.com/a/13092317
 
@@ -1387,11 +1349,11 @@ So no, `range` is not a generator.
 
 You may be thinking, "why didn't they make it directly iterable"? Well, `range`s have some useful properties that wouldn't be possible that way:
 
-- They are immutable, so they can be used as dictionary keys.
-- They have the `start`, `stop` and `step` attributes (since Python 3.3), `count` and `index`methods and they support `in`, `len` and `__getitem__` operations.
-- You can iterate over the same `range` multiple times.
+* They are immutable, so they can be used as dictionary keys.
+* They have the `start`, `stop` and `step` attributes (since Python 3.3), `count` and `index`methods and they support `in`, `len` and `__getitem__` operations.
+* You can iterate over the same `range` multiple times.
 
-------
+---
 
 ```python
 >>> myrange = range(1, 21, 2)
@@ -1412,7 +1374,7 @@ ValueError: 18 is not in range
 1
 >>> next(it)
 3
->>> next(it) 
+>>> next(it)
 5
 ```
 
@@ -1424,8 +1386,6 @@ update() 返回 None，并不返回一个新的数组
 
 如果字典当中有同样的 key，update() 只会把新的替换旧的，而不会因为大小而进行改变
 
-
-
 ```python
 x = {'a': 1, 'b': 2}
 y = {'b': 3, 'c': 4}
@@ -1435,11 +1395,7 @@ x.update(y)
 {'a': 1, 'b': 3, 'c': 4}
 ```
 
-
-
 如果我们对调一个顺序：
-
-
 
 ```python
 x = {'a': 1, 'b': 3}
@@ -1450,7 +1406,7 @@ x.update(y)
 {'a': 1, 'b': 2, 'c': 4}
 ```
 
-在 python 3.5 当中也有新的针对字典的拆包符 **
+在 python 3.5 当中也有新的针对字典的拆包符 \*\*
 
 所以还有一个新的语法，可以把两个字典拼在一起：`z = {**x, **y}`
 
@@ -1458,14 +1414,11 @@ x.update(y)
 
 生成器用完就被释放了，具体作用于：
 
-
-
 ```python
 c = zip(a,b)
 # 这时候 c 是一个 zip， 其实就是一个迭代器 iterator。
 d = list(c)  # 经过 list 操作之后，作为迭代器的 zip 也就是 c 变量被释放了
 print(list(c))  # 结果将是一个空的 list, 因为迭代器 c 当中已经没有元素了
-
 ```
 
 同样，当我们对一个 iterator 进行 next 操作之后，被抛出的元素即刻被释放，再也找不回来了
@@ -1478,7 +1431,7 @@ I see many answers suggesting [itertools.tee](http://docs.python.org/library/ite
 
 > This itertool may require significant auxiliary storage (depending on how much temporary data needs to be stored). In general, if one iterator uses most or all of the data before another iterator starts, it is faster to use `list()` instead of `tee()`.
 
-Basically, `tee` is designed for those situation where two (or more) clones of one iterator, while "getting out of sync" with each other, don't do so *by much* -- rather, they say in the same "vicinity" (a few items behind or ahead of each other). Not suitable for the OP's problem of "redo from the start".
+Basically, `tee` is designed for those situation where two (or more) clones of one iterator, while "getting out of sync" with each other, don't do so _by much_ -- rather, they say in the same "vicinity" (a few items behind or ahead of each other). Not suitable for the OP's problem of "redo from the start".
 
 `L = list(DictReader(...))` on the other hand is perfectly suitable, as long as the list of dicts can fit comfortably in memory. A new "iterator from the start" (very lightweight and low-overhead) can be made at any time with `iter(L)`, and used in part or in whole without affecting new or existing ones; other access patterns are also easily available.
 
@@ -1526,16 +1479,14 @@ def myfnc():
  myfnc2()
 
 myfnc()
-
 ```
-
-
 
 global 作用于 global 的作用域，nonlocal 试用于非 global 的父级作用域
 
 # 如何去除 list 里多余的项目，最快的方法
 
-思路，转换成 dict 然后再转回 list
+思路，转换成 dict 然后再转  回 list
+
 ```python
 def function(seq):
     # Not order preserving
@@ -1550,8 +1501,8 @@ def function(seq):
 
 > The difference between shallow and deep copying is only relevant for compound objects (objects that contain other objects, like lists or class instances):
 >
-> - A shallow copy constructs a new compound object and then (to the extent possible) inserts references into it to the objects found in the original.
-> - A deep copy constructs a new compound object and then, recursively, inserts copies into it of the objects found in the original.
+> * A shallow copy constructs a new compound object and then (to the extent possible) inserts references into it to the objects found in the original.
+> * A deep copy constructs a new compound object and then, recursively, inserts copies into it of the objects found in the original.
 
 Here's a little demonstration:
 
@@ -1607,9 +1558,9 @@ def fib(max):
    ...:         n = n + 1
    ...:         return 'done'
 ```
-第一次 next() 算出1
-第二次 next() 退出
-因为第二次求值遇到了 return
+
+第一次 next() 算出 1
+第二次 next() 退出因为第二次求值遇到了 return
 
 如果是这样：
 
@@ -1625,10 +1576,7 @@ def fib(max):
 
 则函数会在到了给定的 `max` 之后结束
 
-
 # [[] and {} vs list() and dict(), which is better?](https://stackoverflow.com/a/5791030/4382094)
-
-
 
 ```python
 In [1]: import dis
@@ -1647,7 +1595,7 @@ In [5]: dis.dis(b)
 
 # `yield` 关键词是干嘛用的
 
-To understand what `yield` does, you must understand what *generators* are. And before generators come *iterables*.
+To understand what `yield` does, you must understand what _generators_ are. And before generators come _iterables_.
 
 ## Iterables
 
@@ -1662,7 +1610,7 @@ When you create a list, you can read its items one by one. Reading its items one
 3
 ```
 
-`mylist` is an *iterable*. When you use a list comprehension, you create a list, and so an iterable:
+`mylist` is an _iterable_. When you use a list comprehension, you create a list, and so an iterable:
 
 ```
 >>> mylist = [x*x for x in range(3)]
@@ -1724,7 +1672,7 @@ The first time the `for` calls the generator object created from your function, 
 
 The generator is considered empty once the function runs but does not hit `yield` anymore. It can be because the loop had come to an end, or because you do not satisfy an `"if/else"` anymore.
 
-------
+---
 
 ## Your code explained
 
@@ -1779,8 +1727,8 @@ return result
 
 This code contains several smart parts:
 
-- The loop iterates on a list but the list expands while the loop is being iterated :-) It's a concise way to go through all these nested data even if it's a bit dangerous since you can end up with an infinite loop. In this case, `candidates.extend(node._get_child_candidates(distance, min_dist, max_dist))` exhausts all the values of the generator, but `while` keeps creating new generator objects which will produce different values from the previous ones since it's not applied on the same node.
-- The `extend()` method is a list object method that expects an iterable and adds its values to the list.
+* The loop iterates on a list but the list expands while the loop is being iterated :-) It's a concise way to go through all these nested data even if it's a bit dangerous since you can end up with an infinite loop. In this case, `candidates.extend(node._get_child_candidates(distance, min_dist, max_dist))` exhausts all the values of the generator, but `while` keeps creating new generator objects which will produce different values from the previous ones since it's not applied on the same node.
+* The `extend()` method is a list object method that expects an iterable and adds its values to the list.
 
 Usually we pass a list to it:
 
@@ -1794,8 +1742,8 @@ Usually we pass a list to it:
 
 But in your code it gets a generator, which is good because:
 
-1. You don't need to read the values twice.
-2. You may have a lot of children and you don't want them all stored in memory.
+1.  You don't need to read the values twice.
+2.  You may have a lot of children and you don't want them all stored in memory.
 
 `And it works because Python does not care if the argument of a method is a list or not. Python expects iterables so it will work with strings, lists, tuples and generators! This is called duck typing and is one of the reason why Python is so cool.`
 
@@ -1821,12 +1769,12 @@ type(Truck()) == Vehicle        # returns False
 ```python
 >>> def g():
 ...     yield from range(5)
-... 
+...
 >>> list(g())
 [0, 1, 2, 3, 4]
 >>> def g():
 ...     yield range(5)
-... 
+...
 >>> list(g())
 [range(0, 5)]
 >>>
@@ -1836,7 +1784,7 @@ type(Truck()) == Vehicle        # returns False
 
 # 如何 flatten() 一个 list 或者 iterable object
 
-一个生成器的版本： 
+一个生成器的版本：
 
 ```python
 def flatten(a):
@@ -1848,6 +1796,7 @@ def flatten(a):
 ```
 
 非字典的 iterable object
+
 ```python
 def flatten(a):
     for each in a:
@@ -1863,17 +1812,19 @@ def flatten(a):
 # new style
 class fuck(object):
     pass
-
 ```
+
 要用到关键词 object，证明类和对象的关系。
 
 # 不能用 list() 去操作一个 integer
+
 `list()` 这个方法是针对 `iterbale object`的
 
 # swap list 里的元素
+
 list[a], list[b] = list[b],list[a]
 
-注意不能用值(e.g. value = list[a], 直接用 value 而不是 list[a])来进行交换，不然index会发生问题，导致交换失败
+注意不能用值(e.g. value = list[a], 直接用 value 而不是 list[a])来进行交换，不然 index 会发生问题，导致交换失败
 
 # 如何把递归的里头的值 return 出来，解决递归 return 为 None 的问题
 
@@ -1893,7 +1844,6 @@ def binary_search(created_list, target_number, left, right):
 此时会返回 `none` 因为你在最底层的递归虽然返回了 `mid` 但是你上层的函数调用没有返回，所以应该改成：
 
 ```python
-
 def binary_search(created_list, target_number, left, right):
     mid = int((left + right) / 2)
     if target_number > created_list[mid]:
@@ -1903,9 +1853,8 @@ def binary_search(created_list, target_number, left, right):
     else:
         return mid
 ```
-        
-保证每个递归都有返回值
 
+保证每个递归都有返回值
 
 #关于嵌套 dict 里元素的交换
 
@@ -1921,15 +1870,13 @@ In [10]: b['fuck']='you'
 
 In [11]: b
 Out[11]: {'fuck': 'you'}
-
 ```
-        
+
 以下内容来自 《集体智慧编程》
 
-我们有一个dict：
+我们有一个 dict：
 
 ```python
-
 pref = {'Lisa Rose': {'Lady in the Water':3.5,'Snakes on a Plane':3.5},'
    ...: Gene Seymour':{'Lady in the Water':2.5,'Snakes on a Plane':3.0}}
 ```
@@ -1937,7 +1884,6 @@ pref = {'Lisa Rose': {'Lady in the Water':3.5,'Snakes on a Plane':3.5},'
 我们要把里头嵌套的内容交换以下，变成第一键为电影名称，嵌套的键为人物名称
 
 ```python
-
 # python 实现代码
 
 prefs = {'Lisa Rose': {'Lady in the Water': 3.5, 'Snakes on a Plane': 3.5},
@@ -1950,6 +1896,16 @@ for person in prefs:
         result.setdefault(item, {})
         result[item][person] = prefs[person][item]
 print(result)
-
 ```
-        
+
+# How to copy a list
+
+```python
+a=[1,2,3]
+b=a[:]
+
+a[1,2,3]
+b=a
+b[0]=5
+# it would make a = [5,2,3]
+```
