@@ -60,9 +60,9 @@ print(a)
 
 1.  `sorted()` returns a **new** sorted list, leaving the original list unaffected. `list.sort()` sorts the list **in-place**, mutating the list indices, and returns `None` (like all in-place operations).
 2.  `sorted()` works on any iterable, not just lists. Strings, tuples, dictionaries (you'll get the keys), generators, etc., returning a list containing all elements, sorted.
-3.  * Use `list.sort()` when you want to mutate the list, `sorted()` when you want a new sorted object back. Use `sorted()` when you want to sort something that is an iterable, not a list _yet_.
-    * For lists, `list.sort()` is faster than `sorted()` because it doesn't have to create a copy. For any other iterable, you have no choice.
-    * No, you cannot retrieve the original positions. Once you called `list.sort()` the original order is gone.
+3.  - Use `list.sort()` when you want to mutate the list, `sorted()` when you want a new sorted object back. Use `sorted()` when you want to sort something that is an iterable, not a list _yet_.
+    - For lists, `list.sort()` is faster than `sorted()` because it doesn't have to create a copy. For any other iterable, you have no choice.
+    - No, you cannot retrieve the original positions. Once you called `list.sort()` the original order is gone.
 
 # 默认参数注意事项
 
@@ -452,8 +452,8 @@ Okay, still here? Now the fun part...
 
 You’ve seen that functions are objects. Therefore, functions:
 
-* can be assigned to a variable
-* can be defined in another function
+- can be assigned to a variable
+- can be defined in another function
 
 That means that **a function can return another function**.
 
@@ -1098,10 +1098,10 @@ I know, the last time you had this feeling, it was after listening a guy saying:
 
 ## Best practices: decorators
 
-* Decorators were introduced in Python 2.4, so be sure your code will be run on >= 2.4.
-* Decorators slow down the function call. Keep that in mind.
-* **You cannot un-decorate a function.** (There _are_ hacks to create decorators that can be removed, but nobody uses them.) So once a function is decorated, it’s decorated _for all the code_.
-* Decorators wrap functions, which can make them hard to debug. (This gets better from Python >= 2.5; see below.)
+- Decorators were introduced in Python 2.4, so be sure your code will be run on >= 2.4.
+- Decorators slow down the function call. Keep that in mind.
+- **You cannot un-decorate a function.** (There _are_ hacks to create decorators that can be removed, but nobody uses them.) So once a function is decorated, it’s decorated _for all the code_.
+- Decorators wrap functions, which can make them hard to debug. (This gets better from Python >= 2.5; see below.)
 
 The `functools` module was introduced in Python 2.5. It includes the function `functools.wraps()`, which copies the name, module, and docstring of the decorated function to its wrapper.
 
@@ -1251,8 +1251,8 @@ print(get_random_futurama_quote())
 
 Python itself provides several decorators: `property`, `staticmethod`, etc.
 
-* Django uses decorators to manage caching and view permissions.
-* Twisted to fake inlining asynchronous functions calls.
+- Django uses decorators to manage caching and view permissions.
+- Twisted to fake inlining asynchronous functions calls.
 
 This really is a large playground.
 
@@ -1266,11 +1266,11 @@ This really is a large playground.
 >
 > Dictionary views can be iterated over to yield their respective data, and support membership tests:
 >
-> * `len(dictview)`
+> - `len(dictview)`
 >
 >   Return the number of entries in the dictionary.
 >
-> - `iter(dictview)`
+> * `iter(dictview)`
 >
 >   Return an iterator over the keys, values or items (represented as tuples of `(key, value)`) in the dictionary.Keys and values are iterated over in an arbitrary order which is non-random, varies across Python implementations, and depends on the dictionary’s history of insertions and deletions. If keys, values and items views are iterated over with no intervening modifications to the dictionary, the order of items will directly correspond. This allows the creation of `(value, key)` pairs using [`zip()`](https://docs.python.org/3.3/library/functions.html#zip): `pairs = zip(d.values(),d.keys())`. Another way to create the same list is `pairs = [(v, k) for (k, v) in d.items()]`.Iterating views while adding or deleting entries in the dictionary may raise a [`RuntimeError`](https://docs.python.org/3.3/library/exceptions.html#RuntimeError) or fail to iterate over all entries.
 
@@ -1349,9 +1349,9 @@ So no, `range` is not a generator.
 
 You may be thinking, "why didn't they make it directly iterable"? Well, `range`s have some useful properties that wouldn't be possible that way:
 
-* They are immutable, so they can be used as dictionary keys.
-* They have the `start`, `stop` and `step` attributes (since Python 3.3), `count` and `index`methods and they support `in`, `len` and `__getitem__` operations.
-* You can iterate over the same `range` multiple times.
+- They are immutable, so they can be used as dictionary keys.
+- They have the `start`, `stop` and `step` attributes (since Python 3.3), `count` and `index`methods and they support `in`, `len` and `__getitem__` operations.
+- You can iterate over the same `range` multiple times.
 
 ---
 
@@ -1501,8 +1501,8 @@ def function(seq):
 
 > The difference between shallow and deep copying is only relevant for compound objects (objects that contain other objects, like lists or class instances):
 >
-> * A shallow copy constructs a new compound object and then (to the extent possible) inserts references into it to the objects found in the original.
-> * A deep copy constructs a new compound object and then, recursively, inserts copies into it of the objects found in the original.
+> - A shallow copy constructs a new compound object and then (to the extent possible) inserts references into it to the objects found in the original.
+> - A deep copy constructs a new compound object and then, recursively, inserts copies into it of the objects found in the original.
 
 Here's a little demonstration:
 
@@ -1727,8 +1727,8 @@ return result
 
 This code contains several smart parts:
 
-* The loop iterates on a list but the list expands while the loop is being iterated :-) It's a concise way to go through all these nested data even if it's a bit dangerous since you can end up with an infinite loop. In this case, `candidates.extend(node._get_child_candidates(distance, min_dist, max_dist))` exhausts all the values of the generator, but `while` keeps creating new generator objects which will produce different values from the previous ones since it's not applied on the same node.
-* The `extend()` method is a list object method that expects an iterable and adds its values to the list.
+- The loop iterates on a list but the list expands while the loop is being iterated :-) It's a concise way to go through all these nested data even if it's a bit dangerous since you can end up with an infinite loop. In this case, `candidates.extend(node._get_child_candidates(distance, min_dist, max_dist))` exhausts all the values of the generator, but `while` keeps creating new generator objects which will produce different values from the previous ones since it's not applied on the same node.
+- The `extend()` method is a list object method that expects an iterable and adds its values to the list.
 
 Usually we pass a list to it:
 
@@ -1908,4 +1908,10 @@ a[1,2,3]
 b=a
 b[0]=5
 # it would make a = [5,2,3]
+```
+
+# 如何创建一个定长的空 list
+
+```python
+target = [None]*length
 ```
