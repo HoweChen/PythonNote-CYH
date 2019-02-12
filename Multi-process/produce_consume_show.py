@@ -1,7 +1,7 @@
 from multiprocessing import Pool, Queue, Process
 
 q = Queue()
-show_q = Queue()
+main_q = Queue()
 
 
 def producer():
@@ -21,11 +21,23 @@ def consumer():
         result = q.get()
         if result == "None":
             meet_end = True
-            show_q.put("None")
+            main_q.put("None")
         else:
             # print(result)
-            show_q.put(result)
+            main_q.put(result)
 
+def show():
+    main_q_end = False
+    while True:
+        if main_q.empty() is True and main_q_end is False:
+            continue
+        if main_q.empty() is True and main_q_end is True:
+            break
+        result = main_q.get()
+        if result == "None":
+            main_q_end = True
+        else:
+            print(result)
 
 p = Process(target=producer)
 c = Process(target=consumer)
@@ -33,17 +45,7 @@ c = Process(target=consumer)
 p.start()
 c.start()
 
-show_q_end = False
-while True:
-    if show_q.empty() is True and show_q_end is False:
-        continue
-    if show_q.empty() is True and show_q_end is True:
-        break
-    result = show_q.get()
-    if result == "None":
-        show_q_end = True
-    else:
-        print(result)
+show()
 
 p.join()
 c.join()
