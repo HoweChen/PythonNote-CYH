@@ -5,7 +5,7 @@ show_q = Queue()
 
 
 def producer():
-    for i in range(100):
+    for i in range(1000):
         q.put(i)
     q.put("None")
 
