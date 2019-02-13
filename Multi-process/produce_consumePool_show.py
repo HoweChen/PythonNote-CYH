@@ -1,4 +1,4 @@
-from multiprocessing import Pool, Queue, Process, Manager
+from multiprocessing import Pool, Queue, Process, Manager, cpu_count
 import time
 
 manager = Manager()
@@ -26,8 +26,8 @@ def consumer():
             meet_end = True
             main_q.put("None")
         else:
-            print(result)
-            # main_q.put(result)
+            # print(result)
+            main_q.put(result)
 
 
 def show():
@@ -52,7 +52,7 @@ start = time.time()
 p.start()
 c.apply(consumer)
 
-# show()
+show()
 
 
 p.join()
