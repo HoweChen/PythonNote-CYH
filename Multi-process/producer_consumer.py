@@ -1,4 +1,4 @@
-from multiprocessing import Process, JoinableQueue, Queue,Pool
+from multiprocessing import Process, JoinableQueue, Queue, Pool
 import time
 import os
 from random import random
