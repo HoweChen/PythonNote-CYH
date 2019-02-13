@@ -1,4 +1,5 @@
 from multiprocessing import Pool, Queue, Process
+import time
 
 q = Queue()
 main_q = Queue()
@@ -23,8 +24,9 @@ def consumer():
             meet_end = True
             main_q.put("None")
         else:
-            # print(result)
-            main_q.put(result)
+            print(result)
+            # main_q.put(result)
+
 
 def show():
     main_q_end = False
@@ -39,13 +41,17 @@ def show():
         else:
             print(result)
 
+
 p = Process(target=producer)
 c = Process(target=consumer)
-
+start = time.time()
 p.start()
 c.start()
 
-show()
+# show()
+
 
 p.join()
 c.join()
+end = time.time()
+print(end - start)
