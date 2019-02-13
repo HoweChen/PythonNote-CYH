@@ -24,8 +24,8 @@ def consumer():
             meet_end = True
             main_q.put("None")
         else:
-            print(result)
-            # main_q.put(result)
+            # print(result)
+            main_q.put(result)
 
 
 def show():
@@ -48,7 +48,7 @@ start = time.time()
 p.start()
 c.start()
 
-# show()
+show()
 
 
 p.join()
