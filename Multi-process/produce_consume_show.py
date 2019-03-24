@@ -1,4 +1,5 @@
-from multiprocessing import Pool, Queue, Process
+# from multiprocessing import Pool, Queue, Process
+from multiprocessing.dummy import Pool, Queue, Process
 import time
 from functools import wraps
 
